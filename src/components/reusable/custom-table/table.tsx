@@ -31,7 +31,6 @@ const Table = ({
   isFooter,
   isPending,
 }: ITable) => {
-  console.log('headher', header);
   return (
     <CardFrame className='!p-0 overflow-hidden border border-divider'>
       {/* Render header section if provided */}

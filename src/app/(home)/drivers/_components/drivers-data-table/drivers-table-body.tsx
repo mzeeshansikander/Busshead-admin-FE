@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
 import { Dispatch, SetStateAction } from 'react';
+import Button from '@/components/reusable/button';
 
 interface Driver {
   id: string;
@@ -15,27 +16,27 @@ interface Driver {
   email: string;
   phoneNumber: string;
   status: string;
-  // setCurrentStep?: Dispatch<SetStateAction<string>>;
-  //  setSelectedUserId?: Dispatch<SetStateAction<string | null>>;
+  setCurrentStep?: Dispatch<SetStateAction<string>>;
+  setDriverId?: Dispatch<SetStateAction<string>>;
 }
 
 const DriversTableBody = ({
+  id,
   name,
   email,
   phoneNumber,
   status,
   vehcile,
   image,
+  setCurrentStep,
+  setDriverId,
 }: Driver) => {
-  //   const handleUserClick = () => {
-  //     setSelectedUserId && setSelectedUserId(id);
-
-  //     if (userType === 'Active Users') {
-  //       setCurrentStep && setCurrentStep('usersManagementComp');
-  //     } else {
-  //       setCurrentStep && setCurrentStep('usersDetailsSuspendedComp');
-  //     }
-  //   };
+  const handleUserClick = () => {
+    console.log('working');
+    console.log('id', id);
+    setDriverId && setDriverId(id);
+    setCurrentStep && setCurrentStep('driverDetails');
+  };
 
   return (
     <tr
@@ -70,16 +71,16 @@ const DriversTableBody = ({
 
       {/* Sixth column - Actions  */}
       <td className={cn('truncate pl-3')}>
-        <button
+        <Button
           className='text-gray-400 hover:text-gray-600'
-
-          // onClick={handleUserClick}
+          type='button'
+          onClick={handleUserClick}
         >
           <Image
             src={arrowLeftIcon}
             alt='arrow left'
           />
-        </button>
+        </Button>
       </td>
     </tr>
   );

@@ -4,13 +4,21 @@ import TableHeader from '@/components/reusable/custom-table/table-head';
 import DropdownComp from '@/components/reusable/drop-down';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import DriversTableBody from './drivers-table-body';
 import { DRIVER_CATEGORIES } from '@/common/types/constants/constant';
 import Button from '@/components/reusable/button';
 import { DriverCategory } from '@/common/types/driver/driver.types';
 
-const DriversDataTable = () => {
+interface DriversDataTableProps {
+  setCurrentStep: Dispatch<SetStateAction<string>>;
+  setDriverId: Dispatch<SetStateAction<string>>;
+}
+
+const DriversDataTable: React.FC<DriversDataTableProps> = ({
+  setCurrentStep,
+  setDriverId,
+}) => {
   const [driverCategory, setDriverCategory] =
     useState<DriverCategory>('Approved');
 
@@ -50,7 +58,7 @@ const DriversDataTable = () => {
                 setSearchDriver(e.target.value);
               }}
               placeholder='Search users...'
-              className='h-[42px] w-full pl-10 pr-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-'
+              className='h-[42px] w-full pl-10 pr-4 border border-gray-300 rounded-md '
             />
           </div>
 
@@ -79,7 +87,7 @@ const DriversDataTable = () => {
           <Button
             key={category}
             onClick={() => setDriverCategory(category)}
-            className={`px-4 py-2 rounded-none pb-2  transition-all duration-200     ${
+            className={`px-4 py-2 rounded-none pb-2  transition-all duration-200  ${
               driverCategory === category
                 ? 'text-green-sec  border-b-2 border-green-sec '
                 : ''
@@ -117,6 +125,8 @@ const DriversDataTable = () => {
                   image={driver.profilePicture}
                   status={driver?.status}
                   vehcile={driver?.vehicle}
+                  setCurrentStep={setCurrentStep}
+                  setDriverId={setDriverId}
                 />
               ))}
 

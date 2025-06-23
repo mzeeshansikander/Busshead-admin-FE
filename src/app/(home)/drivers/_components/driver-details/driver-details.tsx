@@ -14,19 +14,31 @@ import ContainerWrapper from '@/components/reusable/container-wrapper';
 import { Dialog } from '@/components/ui/dialog';
 import { DialogContent, DialogTitle } from '@radix-ui/react-dialog';
 import Image from 'next/image';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { GoArrowLeft } from 'react-icons/go';
 import DeactivateDriverComp from '../deactivate-driver-comp/deactivate-driver-comp';
 
-const DriversDetailsView = () => {
+interface DriverDetailsProps {
+  driverId: string | null;
+  setCurrentStep: Dispatch<SetStateAction<string>>;
+}
+
+const DriversDetails: React.FC<DriverDetailsProps> = ({
+  driverId,
+  setCurrentStep,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <main className='flex flex-col gap-5 p-5'>
       {/* heading row */}
       <div className='flex flex-row justify-between'>
         <div className='flex gap-4'>
           {/* Back button */}
-          <Button type='button'>
+          <Button
+            type='button'
+            onClick={() => setCurrentStep && setCurrentStep('driversDataTable')}
+          >
             <GoArrowLeft className='w-[22px] h-[22px]' />
           </Button>
           <h2 className='text-xl font-semibold'>Driver Details</h2>
@@ -251,4 +263,4 @@ const DriversDetailsView = () => {
   );
 };
 
-export default DriversDetailsView;
+export default DriversDetails;
