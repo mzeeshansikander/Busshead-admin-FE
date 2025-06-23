@@ -31,7 +31,7 @@ const DriversTableBody = ({
   const router = useRouter();
 
   const handleUserClick = () => {
-    router.push(`/driver-details?driverId=${id}`);
+    router.push(`/drivers/${id}`);
   };
 
   return (

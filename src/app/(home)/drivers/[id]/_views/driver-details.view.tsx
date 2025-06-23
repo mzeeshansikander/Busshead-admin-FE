@@ -17,7 +17,7 @@ import { GoArrowLeft } from 'react-icons/go';
 import { useRouter } from 'next/navigation';
 import DeactivateDriverComp from '../_components/deactivate-driver-comp';
 import ChatButtonComp from '@/components/reusable/chat-button';
-
+import restrictedIcon from '@/../public/assets/images/Avatar.png';
 interface DriverDetailsProps {
   driverId: string;
 }
@@ -158,9 +158,12 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           {/* Account Restriction Container */}
           <ContainerWrapper>
             <div className='flex flex-col gap-7'>
-              <div className='flex flex-row gap-7'>
-                <p>icon</p>
-                <p className='font-medium text-lg'>Account Restricted</p>
+              <div className='flex flex-row gap-1'>
+                <Image
+                  src={restrictedIcon}
+                  alt='restricted icon'
+                />
+                <p className='font-medium text-lg mt-4.5'>Account Restricted</p>
               </div>
               <Button
                 type='button'

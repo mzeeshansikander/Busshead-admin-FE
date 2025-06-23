@@ -1,14 +1,14 @@
+import { DRIVER_CATEGORIES } from '@/common/types/constants/constant';
 import { dummyDriversData } from '@/common/types/constants/driver';
+import { DriverCategory } from '@/common/types/driver/driver.types';
+import Button from '@/components/reusable/button';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
 import DropdownComp from '@/components/reusable/drop-down';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import DriversTableBody from './drivers-table-body';
-import { DRIVER_CATEGORIES } from '@/common/types/constants/constant';
-import Button from '@/components/reusable/button';
-import { DriverCategory } from '@/common/types/driver/driver.types';
 
 const DriversDataTable = () => {
   const [driverCategory, setDriverCategory] =

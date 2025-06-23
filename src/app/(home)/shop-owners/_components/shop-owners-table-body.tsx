@@ -7,6 +7,7 @@ import Image from 'next/image';
 import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
 import { Dispatch, SetStateAction } from 'react';
 import Button from '@/components/reusable/button';
+import { useRouter } from 'next/navigation';
 
 interface ShopOwner {
   id: string;
@@ -29,12 +30,12 @@ const ShopOwnersTableBody = ({
   storeAddress,
   profilePicture,
 }: ShopOwner) => {
-  //   const handleUserClick = () => {
-  //     console.log('working');
-  //     console.log('id', id);
-  //     setDriverId && setDriverId(id);
-  //     setCurrentStep && setCurrentStep('driverDetails');
-  //   };
+  const router = useRouter();
+
+  const handleUserClick = () => {
+    console.log('working');
+    router.push(`/shop-owners/${id}`);
+  };
 
   return (
     <tr
@@ -70,7 +71,7 @@ const ShopOwnersTableBody = ({
         <Button
           className='text-gray-400 hover:text-gray-600'
           type='button'
-          //   onClick={handleUserClick}
+          onClick={handleUserClick}
         >
           <Image
             src={arrowLeftIcon}
