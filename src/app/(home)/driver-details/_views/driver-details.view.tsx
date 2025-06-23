@@ -11,33 +11,31 @@ import {
 } from '@/common/types/constants/driver';
 import Button from '@/components/reusable/button';
 import ContainerWrapper from '@/components/reusable/container-wrapper';
-import { Dialog } from '@/components/ui/dialog';
-import { DialogContent, DialogTitle } from '@radix-ui/react-dialog';
 import Image from 'next/image';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { GoArrowLeft } from 'react-icons/go';
-import DeactivateDriverComp from '../deactivate-driver-comp/deactivate-driver-comp';
+import { useRouter } from 'next/navigation';
+import DeactivateDriverComp from '../_components/deactivate-driver-comp';
+import ChatButtonComp from '@/components/reusable/chat-button';
 
 interface DriverDetailsProps {
-  driverId: string | null;
-  setCurrentStep: Dispatch<SetStateAction<string>>;
+  driverId: string;
 }
 
-const DriversDetails: React.FC<DriverDetailsProps> = ({
-  driverId,
-  setCurrentStep,
-}) => {
+const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
 
   return (
     <main className='flex flex-col gap-5 p-5'>
       {/* heading row */}
-      <div className='flex flex-row justify-between'>
-        <div className='flex gap-4'>
+      <div className={`flex flex-row justify-between`}>
+        <div className='flex flex-row gap-4'>
           {/* Back button */}
           <Button
             type='button'
-            onClick={() => setCurrentStep && setCurrentStep('driversDataTable')}
+            onClick={() => router.back()}
           >
             <GoArrowLeft className='w-[22px] h-[22px]' />
           </Button>
@@ -45,7 +43,7 @@ const DriversDetails: React.FC<DriverDetailsProps> = ({
         </div>
 
         {dummyDriverDetails?.status === 'pending' ? (
-          <div className='flex flex-row gap-2'>
+          <div className='flex sm:flex-row flex-col gap-2'>
             <Button className='bg-red-500 py-2.5 px-8 text-white font-medium'>
               Reject
             </Button>
@@ -54,19 +52,7 @@ const DriversDetails: React.FC<DriverDetailsProps> = ({
             </Button>
           </div>
         ) : dummyDriverDetails?.status === 'approved' ? (
-          <Button
-            type='button'
-            className='gradient py-2 px-6'
-          >
-            <div className='flex flex-row gap-2'>
-              <Image
-                src={chatIcon}
-                alt='chat icon'
-                className='w-[20px] h-[20px] mt-0.5'
-              />
-              <p className='font-medium'>Chat</p>
-            </div>
-          </Button>
+          <ChatButtonComp />
         ) : dummyDriverDetails?.status === 'rejected' ? (
           <Button
             type='button'
@@ -263,4 +249,4 @@ const DriversDetails: React.FC<DriverDetailsProps> = ({
   );
 };
 
-export default DriversDetails;
+export default DriverDetailsView;

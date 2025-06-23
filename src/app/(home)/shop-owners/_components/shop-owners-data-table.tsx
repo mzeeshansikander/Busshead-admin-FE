@@ -1,3 +1,5 @@
+'use client';
+
 import { dummyDriversData } from '@/common/types/constants/driver';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
@@ -5,28 +7,28 @@ import DropdownComp from '@/components/reusable/drop-down';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import React, { Dispatch, SetStateAction, useState } from 'react';
-import DriversTableBody from './drivers-table-body';
 import { DRIVER_CATEGORIES } from '@/common/types/constants/constant';
 import Button from '@/components/reusable/button';
 import { DriverCategory } from '@/common/types/driver/driver.types';
+import { dummyShopOwnersData } from '@/common/types/constants/shop-owners';
+import ShopOwnersTableBody from './shop-owners-table-body';
 
-const DriversDataTable = () => {
-  const [driverCategory, setDriverCategory] =
-    useState<DriverCategory>('Approved');
+// interface DriversDataTableProps {
+//   setCurrentStep: Dispatch<SetStateAction<string>>;
+//   setDriverId: Dispatch<SetStateAction<string>>;
+// }
 
+const ShopOwnersDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [searchDriver, setSearchDriver] = useState('');
-  const [status, setStatus] = useState('');
+  const [searchShopOwner, setSearchShopOwner] = useState('');
 
-  const statuses = ['en route', 'active'];
-
-  const driversTableHeader = [
+  const shopOwnersTableHeader = [
     'Driver',
-    'Vehicle',
     'Email',
     'Phone Number',
-    'Status',
+    'Store Name',
+    'Store Address',
     'Action',
   ];
 
@@ -43,23 +45,13 @@ const DriversDataTable = () => {
               type='text'
               name='search'
               id='search'
-              value={searchDriver}
+              value={searchShopOwner}
               onChange={e => {
                 e.preventDefault();
-                setSearchDriver(e.target.value);
+                setSearchShopOwner(e.target.value);
               }}
-              placeholder='Search users...'
+              placeholder='Search'
               className='h-[42px] w-full pl-10 pr-4 border border-gray-300 rounded-md '
-            />
-          </div>
-
-          {/* User Type Selector */}
-          <div className='flex-shrink-0'>
-            <DropdownComp
-              selected={status}
-              onChange={setStatus}
-              label='Status'
-              valuesToMap={statuses}
             />
           </div>
         </div>
@@ -69,25 +61,7 @@ const DriversDataTable = () => {
 
   return (
     <div className='flex flex-col p-4'>
-      <h1 className='text-[34px] font-semibold'>Drivers</h1>
-
-      {/*  category selection buttons */}
-      <div className='flex gap-4 mt-4'>
-        {DRIVER_CATEGORIES.map(category => (
-          <Button
-            key={category}
-            onClick={() => setDriverCategory(category)}
-            className={`px-4 py-2 rounded-none pb-2  transition-all duration-200  ${
-              driverCategory === category
-                ? 'text-green-sec  border-b-2 border-green-sec '
-                : ''
-            }`}
-            type='button'
-          >
-            {category}
-          </Button>
-        ))}
-      </div>
+      <h1 className='text-[34px] font-semibold'>Shop Owners</h1>
 
       <div className='mt-3'>
         <Table
@@ -101,24 +75,24 @@ const DriversDataTable = () => {
           isFooter
           // isPending={isLoading}
         >
-          <TableHeader tableHeader={driversTableHeader} />
+          <TableHeader tableHeader={shopOwnersTableHeader} />
           <tbody>
             {/* User rows */}
-            {dummyDriversData.length > 0 &&
-              dummyDriversData.map((driver, index) => (
-                <DriversTableBody
-                  key={driver?.id}
-                  id={driver?.id}
-                  email={driver?.email}
-                  name={driver?.driver}
-                  phoneNumber={driver?.phoneNumber}
-                  image={driver.profilePicture}
-                  status={driver?.status}
-                  vehcile={driver?.vehicle}
+            {dummyShopOwnersData?.length > 0 &&
+              dummyShopOwnersData?.map((shopOwner, index) => (
+                <ShopOwnersTableBody
+                  id={shopOwner?.id}
+                  email={shopOwner?.email}
+                  driver={shopOwner?.driver}
+                  phoneNumber={shopOwner?.phoneNumber}
+                  storeAddress={shopOwner?.phoneNumber}
+                  storeName={shopOwner?.storeName}
+                  key={shopOwner?.id}
+                  profilePicture={shopOwner?.profilePicture}
                 />
               ))}
 
-            {dummyDriversData.length === 0 ? (
+            {dummyShopOwnersData?.length === 0 ? (
               <tr>
                 <td
                   colSpan={6}
@@ -153,4 +127,4 @@ const DriversDataTable = () => {
   );
 };
 
-export default DriversDataTable;
+export default ShopOwnersDataTable;

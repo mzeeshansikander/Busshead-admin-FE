@@ -31,8 +31,6 @@ const NavigationContent: React.FC<{
 
   const pathName = extractedPathname.split('/')[1];
 
-  console.log('pathname', pathName);
-
   return (
     <>
       {/* Logo */}
