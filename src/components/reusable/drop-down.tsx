@@ -27,7 +27,7 @@ function DropdownComp({
         <DropdownMenuTrigger asChild>
           <button
             type='button'
-            className='inline-flex items-center justify-between h-[42px] px-4 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 min-w-[140px]'
+            className='inline-flex items-center justify-between h-[42px] px-4 py-2 bg-white border border-gray-300 rounded-md text-sm text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-0 min-w-[140px]'
           >
             <span>{selected || label}</span>
             <ChevronDown className='h-4 w-4 ml-2 text-gray-400' />

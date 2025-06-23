@@ -24,7 +24,6 @@ const DriversDataTable: React.FC<DriversDataTableProps> = ({
 
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [selectedType, setSelectedType] = useState('');
   const [searchDriver, setSearchDriver] = useState('');
   const [status, setStatus] = useState('');
 
@@ -46,7 +45,7 @@ const DriversDataTable: React.FC<DriversDataTableProps> = ({
           {/* Search Input */}
           <div className='relative flex-1'>
             <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-              <Search className='h-4 w-4 text-gray-400' />
+              <Search className='h-4 w-4 text-neutral-grey-zero' />
             </div>
             <Input
               type='text'
@@ -75,7 +74,6 @@ const DriversDataTable: React.FC<DriversDataTableProps> = ({
       </div>
     );
   };
-  const headerComponent = <SearchHeader />;
 
   return (
     <div className='flex flex-col p-4'>
@@ -130,7 +128,6 @@ const DriversDataTable: React.FC<DriversDataTableProps> = ({
                 />
               ))}
 
-            {/* No data state - rendered within table */}
             {dummyDriversData.length === 0 ? (
               <tr>
                 <td
