@@ -109,6 +109,7 @@ const DriversDataTable = () => {
             {dummyDriversData.length > 0 &&
               dummyDriversData.map((driver, index) => (
                 <DriversTableBody
+                  key={driver?.id}
                   id={driver?.id}
                   email={driver?.email}
                   name={driver?.driver}

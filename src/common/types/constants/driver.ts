@@ -180,3 +180,30 @@ export const dummyDriversData = [
     profilePicture: '/images/driver20.jpg',
   },
 ];
+
+export const dummyDriverDetails = {
+  id: '1',
+  firstName: 'Jane',
+  lastName: 'Cooper',
+  email: 'johndoe@example.com',
+  phoneNumber: '+92 123 456 7890',
+  dateOfBirth: '24-06-1990',
+  profilePicture: '/assets/images/Ellipse 5.png',
+  status: 'pending', //pending or approved or rejected
+  licenseFront: '/assets/images/license_front.png',
+  licenseBack: '/assets/images/license_front.png',
+  isAccountRestricted: true,
+};
+
+export const dummyVehicleDetails = {
+  id: '1',
+  driverId: '1',
+  vehicleType: 'Truck',
+  plateNumber: 'KOI - 4157',
+  make: 'Volvo',
+  model: 'FH16',
+  yearOfManufacture: 2021,
+  loadCapacity: '18000',
+  vehicleImage: '/assets/images/container-truck.png',
+  registrationCertificate: '/assets/images/pdf_logo.png',
+};

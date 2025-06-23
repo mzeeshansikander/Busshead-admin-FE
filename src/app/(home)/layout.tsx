@@ -30,7 +30,7 @@ const NavigationContent: React.FC<{
   <>
     {/* Logo */}
     <div className='m-4'>
-      <h1 className='text-5xl font-semibold'>Busshead</h1>
+      <h1 className='text-5xl font-semibold break-words'>Busshead</h1>
     </div>
 
     {/* Navigation Items */}
@@ -41,7 +41,7 @@ const NavigationContent: React.FC<{
             <SheetClose asChild>
               <Link href={item.path}>
                 <div
-                  className='flex gap-2 p-2 rounded cursor-pointer hover:gradient'
+                  className='flex gap-2 p-2 rounded cursor-pointer hover:bg-amber-600'
                   onMouseOver={() => setOver(item.label)}
                   onMouseOut={() => setOver('')}
                 >
@@ -58,7 +58,7 @@ const NavigationContent: React.FC<{
           ) : (
             <Link href={item.path}>
               <div
-                className='flex gap-2 p-2 rounded cursor-pointer hover:bg-gradient-( linear-gradient(90deg, #EEC340 -9.48%, #F3D95D 6.14%, #FDF383 18.33%, #F6E66C 36.52%, #E2B527 64.41%, #F3DC62 91.45%, #FFFB8D 110.67%);
+                className='flex gap-2 p-2 rounded cursor-pointer hover-gradient
 )'
                 onMouseOver={() => setOver(item.label)}
                 onMouseOut={() => setOver('')}

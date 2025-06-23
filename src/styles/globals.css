@@ -45,6 +45,9 @@
   --color-neutral-grey-sixty: var(--neutral-grey-sixty);
   --color-green-sec: var(--color-green-sec);
   --color-neutral-grey-zero: var(--color-neautral-grey-zero);
+  --color-dark-blue-primary: var(--color-dark-blue-primary);
+  --color-grey-medium: var(--color-grey-medium);
+  --color-green-primary: var(--color-green-primary);
 }
 
 :root {
@@ -84,6 +87,9 @@
   --neutral-grey-sixty: #8d9a9b;
   --color-green-sec: #b7bf49;
   --color-neutral-grey-zero: #f2f5f6;
+  --color-dark-blue-primary: ##466177;
+  --color-grey-medium: #808080;
+  --color-green-primary: #21ab70;
 }
 
 .dark {
@@ -129,7 +135,8 @@
   }
 }
 
-.gradient {
+.gradient,
+.hover-gradient:hover {
   background: linear-gradient(
     90deg,
     #eec340 -9.48%,
