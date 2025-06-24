@@ -206,3 +206,216 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
 ];
+
+//Pending Payments dummy data
+
+export const dummyPendingPayments = [
+  {
+    driverName: 'John Doe',
+    driverImage: '/images/driver1.jpg',
+    paymentId: '#56231',
+    amount: '$2,345.30',
+  },
+  {
+    driverName: 'Emily Carter',
+    driverImage: '/images/driver2.jpg',
+    paymentId: '#56232',
+    amount: '$1,982.00',
+  },
+  {
+    driverName: 'Mike Johnson',
+    driverImage: '/images/driver3.jpg',
+    paymentId: '#56233',
+    amount: '$3,120.75',
+  },
+  {
+    driverName: 'Sophia Lee',
+    driverImage: '/images/driver4.jpg',
+    paymentId: '#56234',
+    amount: '$1,450.60',
+  },
+  {
+    driverName: 'Chris Evans',
+    driverImage: '/images/driver5.jpg',
+    paymentId: '#56235',
+    amount: '$4,310.10',
+  },
+  {
+    driverName: 'Ava Smith',
+    driverImage: '/images/driver6.jpg',
+    paymentId: '#56236',
+    amount: '$2,100.00',
+  },
+  {
+    driverName: 'Liam Brown',
+    driverImage: '/images/driver7.jpg',
+    paymentId: '#56237',
+    amount: '$1,799.99',
+  },
+  {
+    driverName: 'Olivia Taylor',
+    driverImage: '/images/driver8.jpg',
+    paymentId: '#56238',
+    amount: '$2,987.45',
+  },
+  {
+    driverName: 'Noah Wilson',
+    driverImage: '/images/driver9.jpg',
+    paymentId: '#56239',
+    amount: '$3,675.00',
+  },
+  {
+    driverName: 'Emma Davis',
+    driverImage: '/images/driver10.jpg',
+    paymentId: '#56240',
+    amount: '$1,250.55',
+  },
+  {
+    driverName: 'Lucas White',
+    driverImage: '/images/driver11.jpg',
+    paymentId: '#56241',
+    amount: '$2,520.90',
+  },
+  {
+    driverName: 'Isabella Green',
+    driverImage: '/images/driver12.jpg',
+    paymentId: '#56242',
+    amount: '$2,730.25',
+  },
+  {
+    driverName: 'Mason Hill',
+    driverImage: '/images/driver13.jpg',
+    paymentId: '#56243',
+    amount: '$3,333.33',
+  },
+  {
+    driverName: 'Mia Moore',
+    driverImage: '/images/driver14.jpg',
+    paymentId: '#56244',
+    amount: '$2,220.22',
+  },
+  {
+    driverName: 'Ethan Scott',
+    driverImage: '/images/driver15.jpg',
+    paymentId: '#56245',
+    amount: '$1,890.75',
+  },
+  {
+    driverName: 'Charlotte Adams',
+    driverImage: '/images/driver16.jpg',
+    paymentId: '#56246',
+    amount: '$2,015.15',
+  },
+  {
+    driverName: 'Logan Walker',
+    driverImage: '/images/driver17.jpg',
+    paymentId: '#56247',
+    amount: '$3,600.00',
+  },
+];
+
+//pending driver requests
+export const dummyDriverRequestsData = [
+  {
+    driverName: 'John Doe',
+    driverImage: '/images/driver1.jpg',
+    vehicle: 'Volvo FH16',
+    status: 'pending',
+  },
+  {
+    driverName: 'Emily Carter',
+    driverImage: '/images/driver2.jpg',
+    vehicle: 'Scania R500',
+    status: 'pending',
+  },
+  {
+    driverName: 'Liam Brown',
+    driverImage: '/images/driver3.jpg',
+    vehicle: 'Mercedes Actros',
+    status: 'pending',
+  },
+  {
+    driverName: 'Ava Smith',
+    driverImage: '/images/driver4.jpg',
+    vehicle: 'MAN TGX',
+    status: 'pending',
+  },
+  {
+    driverName: 'Noah Wilson',
+    driverImage: '/images/driver5.jpg',
+    vehicle: 'DAF XF',
+    status: 'pending',
+  },
+  {
+    driverName: 'Sophia Lee',
+    driverImage: '/images/driver6.jpg',
+    vehicle: 'Renault T High',
+    status: 'pending',
+  },
+  {
+    driverName: 'Chris Evans',
+    driverImage: '/images/driver7.jpg',
+    vehicle: 'Volvo VNL',
+    status: 'pending',
+  },
+  {
+    driverName: 'Olivia Taylor',
+    driverImage: '/images/driver8.jpg',
+    vehicle: 'Kenworth T680',
+    status: 'pending',
+  },
+  {
+    driverName: 'Mason Hill',
+    driverImage: '/images/driver9.jpg',
+    vehicle: 'Freightliner Cascadia',
+    status: 'pending',
+  },
+  {
+    driverName: 'Isabella Green',
+    driverImage: '/images/driver10.jpg',
+    vehicle: 'Peterbilt 579',
+    status: 'pending',
+  },
+  {
+    driverName: 'Ethan Scott',
+    driverImage: '/images/driver11.jpg',
+    vehicle: 'Iveco S-Way',
+    status: 'pending',
+  },
+  {
+    driverName: 'Charlotte Adams',
+    driverImage: '/images/driver12.jpg',
+    vehicle: 'Ford F-Max',
+    status: 'pending',
+  },
+  {
+    driverName: 'Logan Walker',
+    driverImage: '/images/driver13.jpg',
+    vehicle: 'Western Star 49X',
+    status: 'pending',
+  },
+  {
+    driverName: 'Mia Robinson',
+    driverImage: '/images/driver14.jpg',
+    vehicle: 'Isuzu Giga',
+    status: 'pending',
+  },
+  {
+    driverName: 'James King',
+    driverImage: '/images/driver15.jpg',
+    vehicle: 'Mack Anthem',
+    status: 'pending',
+  },
+  {
+    driverName: 'Ella Wright',
+    driverImage: '/images/driver16.jpg',
+    vehicle: 'Hino 700',
+    status: 'pending',
+  },
+  {
+    driverName: 'Benjamin Brooks',
+    driverImage: '/images/driver17.jpg',
+    vehicle: 'UD Quon',
+    status: 'pending',
+  },
+];

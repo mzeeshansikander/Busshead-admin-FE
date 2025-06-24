@@ -1,27 +1,21 @@
 'use client';
 
-import { dummyNewOrdersData } from '@/common/types/constants/dashboard';
+import { dummyDriverRequestsData } from '@/common/types/constants/dashboard';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
 import { useState } from 'react';
-import OrdersDataTableBody from './order-data-table-body';
+import DriverRequestsDataTableBody from './driver-requests-table-body';
 
-const OrdersDataTable = () => {
+const DriverRequestsDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const ordersDataTableHeader = [
-    'Order ID',
-    'Shop Owner',
-    'Driver',
-    'Delivery Date',
-    'Payment',
-    'Address',
-    'Action',
-  ];
+  const driversRequestsTableHeader = ['Driver', 'Vehcile', 'Action'];
 
   return (
-    <div className='flex flex-col p-4'>
+    <div className='flex flex-col p-4 gap-2'>
+      <h1 className='text-2xl font-semibold'>Driver Requests</h1>
+
       <div>
         <Table
           currentPage={currentPage}
@@ -32,24 +26,21 @@ const OrdersDataTable = () => {
           total={20}
           // isPending={isLoading}
         >
-          <TableHeader tableHeader={ordersDataTableHeader} />
+          <TableHeader tableHeader={driversRequestsTableHeader} />
           <tbody>
             {/* User rows */}
-            {dummyNewOrdersData?.length > 0 &&
-              dummyNewOrdersData?.map((order, index) => (
-                <OrdersDataTableBody
-                  key={order?.orderId}
-                  orderId={order?.orderId}
-                  address={order?.address}
-                  deliveryDate={order?.deliveryDate}
-                  driver={order?.driver}
-                  payment={order?.payment}
-                  shopOwner={order?.shopOwner}
-                  shopOwnerImage={order?.shopOwnerImage}
+            {dummyDriverRequestsData?.length > 0 &&
+              dummyDriverRequestsData?.map((driverRequest, index) => (
+                <DriverRequestsDataTableBody
+                  driverName={driverRequest?.driverName}
+                  driverImage={driverRequest?.driverImage}
+                  status={driverRequest?.status}
+                  vehcile={driverRequest?.vehicle}
+                  key={index}
                 />
               ))}
 
-            {dummyNewOrdersData?.length === 0 ? (
+            {dummyDriverRequestsData?.length === 0 ? (
               <tr>
                 <td
                   colSpan={6}
@@ -84,4 +75,4 @@ const OrdersDataTable = () => {
   );
 };
 
-export default OrdersDataTable;
+export default DriverRequestsDataTable;

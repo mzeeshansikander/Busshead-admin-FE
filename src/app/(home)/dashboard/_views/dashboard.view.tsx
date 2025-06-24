@@ -2,7 +2,9 @@
 import { dashboardCards } from '@/common/types/constants/dashboard';
 import ContainerWrapper from '@/components/reusable/container-wrapper';
 import Image from 'next/image';
+import DriverRequestsDataTable from '../_components/drivers-request-table/driver-requests-table';
 import OrdersDataTable from '../_components/orders-table/order-data-table';
+import PendingPaymentsDataTable from '../_components/pending-payments-table/pending-payments-data-table';
 
 const DashboardView = () => {
   return (
@@ -33,7 +35,13 @@ const DashboardView = () => {
         <p className='font-semibold text-green-secondary'>View all</p>
       </div>
 
+      {/* order table */}
       <OrdersDataTable />
+
+      <div className='grid sm:grid-cols-2 grid-cols-1 gap-3'>
+        <PendingPaymentsDataTable />
+        <DriverRequestsDataTable />
+      </div>
     </main>
   );
 };
