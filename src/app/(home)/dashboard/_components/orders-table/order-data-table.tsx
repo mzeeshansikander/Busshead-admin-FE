@@ -32,7 +32,10 @@ const OrdersDataTable = () => {
           total={20}
           // isPending={isLoading}
         >
-          <TableHeader tableHeader={ordersDataTableHeader} />
+          <TableHeader
+            tableHeader={ordersDataTableHeader}
+            isEnd={false}
+          />
           <tbody>
             {/* User rows */}
             {dummyNewOrdersData?.length > 0 &&

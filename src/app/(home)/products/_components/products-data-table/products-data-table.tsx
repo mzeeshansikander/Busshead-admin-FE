@@ -1,34 +1,30 @@
-import { DRIVER_CATEGORIES } from '@/common/types/constants/constant';
-import { dummyDriversData } from '@/common/types/constants/driver';
-import { DriverCategory } from '@/common/types/driver/driver.types';
-import Button from '@/components/reusable/button';
+'use client';
+import { dummyProductsData } from '@/common/types/constants/products';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
 import DropdownComp from '@/components/reusable/drop-down';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
-import DriversTableBody from './drivers-table-body';
+import ProductsDataTableBody from './prodducts-data-table-body';
 
-const DriversDataTable = () => {
-  const [driverCategory, setDriverCategory] =
-    useState<DriverCategory>('Approved');
-
+const ProductsDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [searchDriver, setSearchDriver] = useState('');
-  const [status, setStatus] = useState('');
+  const [searchProduct, setSearchProduct] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [category, setCategory] = useState('');
 
-  const statuses = ['en route', 'active'];
+  const productsTableHeader = [
+    'Products',
+    'Category',
+    'Price',
+    'Stock',
 
-  const driversTableHeader = [
-    'Driver',
-    'Vehicle',
-    'Email',
-    'Phone Number',
-    'Status',
     'Action',
   ];
+
+  const categories = ['Caps', 'Gift', 'Clothing'];
 
   const SearchHeader = () => {
     return (
@@ -43,23 +39,39 @@ const DriversDataTable = () => {
               type='text'
               name='search'
               id='search'
-              value={searchDriver}
+              value={searchProduct}
               onChange={e => {
                 e.preventDefault();
-                setSearchDriver(e.target.value);
+                setSearchProduct(e.target.value);
               }}
-              placeholder='Search users...'
-              className='h-[42px] w-full pl-10 pr-4 border border-gray-300 rounded-md '
+              placeholder='Search'
+              className='h-[42px] w-full pl-10 pr-4 border border-gray-300 rounded-md'
             />
           </div>
 
-          {/* User Type Selector */}
+          {/* Quantity Input - Fixed */}
+          <div className='relative'>
+            <Input
+              type='number'
+              name='quantity'
+              id='quantity'
+              value={quantity}
+              onChange={e => {
+                e.preventDefault();
+                setQuantity(e.target.value);
+              }}
+              placeholder='Enter quantity'
+              className='h-[42px] w-[200px] px-4 border border-gray-300 rounded-md'
+            />
+          </div>
+
+          {/* Product Category Selector */}
           <div className='flex-shrink-0'>
             <DropdownComp
-              selected={status}
-              onChange={setStatus}
-              label='Status'
-              valuesToMap={statuses}
+              selected={category}
+              onChange={setCategory}
+              label='Category'
+              valuesToMap={categories}
             />
           </div>
         </div>
@@ -70,24 +82,6 @@ const DriversDataTable = () => {
   return (
     <div className='flex flex-col p-4'>
       <h1 className='text-[34px] font-semibold'>Drivers</h1>
-
-      {/*  category selection buttons */}
-      <div className='flex gap-4 mt-4'>
-        {DRIVER_CATEGORIES.map(category => (
-          <Button
-            key={category}
-            onClick={() => setDriverCategory(category)}
-            className={`px-4 py-2 rounded-none pb-2  transition-all duration-200  ${
-              driverCategory === category
-                ? 'text-green-sec  border-b-2 border-green-sec '
-                : ''
-            }`}
-            type='button'
-          >
-            {category}
-          </Button>
-        ))}
-      </div>
 
       <div className='mt-3'>
         <Table
@@ -102,26 +96,24 @@ const DriversDataTable = () => {
           // isPending={isLoading}
         >
           <TableHeader
-            tableHeader={driversTableHeader}
-            isEnd={false}
+            tableHeader={productsTableHeader}
+            isEnd={true}
           />
           <tbody>
             {/* User rows */}
-            {dummyDriversData.length > 0 &&
-              dummyDriversData.map((driver, index) => (
-                <DriversTableBody
-                  key={driver?.id}
-                  id={driver?.id}
-                  email={driver?.email}
-                  name={driver?.driver}
-                  phoneNumber={driver?.phoneNumber}
-                  image={driver.profilePicture}
-                  status={driver?.status}
-                  vehcile={driver?.vehicle}
+            {dummyProductsData.length > 0 &&
+              dummyProductsData.map((product, index) => (
+                <ProductsDataTableBody
+                  category={product?.category}
+                  price={product?.price}
+                  product={product?.product}
+                  stock={product?.stock}
+                  key={index}
+                  image={product?.image}
                 />
               ))}
 
-            {dummyDriversData.length === 0 ? (
+            {dummyProductsData.length === 0 ? (
               <tr>
                 <td
                   colSpan={6}
@@ -156,4 +148,4 @@ const DriversDataTable = () => {
   );
 };
 
-export default DriversDataTable;
+export default ProductsDataTable;

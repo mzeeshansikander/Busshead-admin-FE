@@ -2,6 +2,7 @@ import { FormikHandlers } from 'formik';
 
 export interface ITableHead {
   tableHeader?: string[];
+  isEnd?: boolean;
 }
 
 export interface ITableBody {

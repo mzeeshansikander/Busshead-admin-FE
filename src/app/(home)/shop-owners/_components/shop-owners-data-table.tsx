@@ -65,7 +65,10 @@ const ShopOwnersDataTable = () => {
           isFooter
           // isPending={isLoading}
         >
-          <TableHeader tableHeader={shopOwnersTableHeader} />
+          <TableHeader
+            tableHeader={shopOwnersTableHeader}
+            isEnd={false}
+          />
           <tbody>
             {/* User rows */}
             {dummyShopOwnersData?.length > 0 &&

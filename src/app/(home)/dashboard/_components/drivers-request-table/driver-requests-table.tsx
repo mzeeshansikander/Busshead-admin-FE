@@ -26,7 +26,10 @@ const DriverRequestsDataTable = () => {
           total={20}
           // isPending={isLoading}
         >
-          <TableHeader tableHeader={driversRequestsTableHeader} />
+          <TableHeader
+            tableHeader={driversRequestsTableHeader}
+            isEnd={false}
+          />
           <tbody>
             {/* User rows */}
             {dummyDriverRequestsData?.length > 0 &&

@@ -26,7 +26,10 @@ const PendingPaymentsDataTable = () => {
           total={20}
           // isPending={isLoading}
         >
-          <TableHeader tableHeader={PendingPaymentsDataTableHeader} />
+          <TableHeader
+            tableHeader={PendingPaymentsDataTableHeader}
+            isEnd={false}
+          />
           <tbody>
             {/* User rows */}
             {dummyPendingPayments?.length > 0 &&

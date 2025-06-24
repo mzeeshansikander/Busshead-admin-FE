@@ -42,7 +42,7 @@ const Table = ({
             <div className='animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-primary' />
           </div>
         ) : (
-          <div className='w-full lg:overflow-x-scroll xl:overflow-x-hidden max-h-[55dvh] overflow-y-auto'>
+          <div className='w-full custom-no-scrollbar lg:overflow-x-scroll xl:overflow-x-hidden max-h-[55dvh] overflow-y-auto'>
             <table className='w-full relative'>{children}</table>
           </div>
         )}

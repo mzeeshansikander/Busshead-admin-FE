@@ -150,3 +150,19 @@
     #fffb8d 110.67%
   );
 }
+
+/* ========================|| Invisible Scrollbar Variant ||======================== */
+.custom-no-scrollbar::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+.custom-no-scrollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.custom-no-scrollbar::-webkit-scrollbar-thumb {
+  background: #e4e4e4;
+  border-radius: 0px;
+}
+.custom-no-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c5c3c3;
+}

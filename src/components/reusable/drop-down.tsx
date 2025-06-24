@@ -7,9 +7,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
+import { DriverCategory } from '@/common/types/driver/driver.types';
 
 type DropdownCompProps = {
-  selected: string | null;
+  selected: string | null | DriverCategory;
   onChange: (value: string) => void;
   label?: string;
   valuesToMap?: string[];
