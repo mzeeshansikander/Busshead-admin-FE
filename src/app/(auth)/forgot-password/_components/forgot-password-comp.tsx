@@ -18,7 +18,7 @@ const ForgotPasswordComp: React.FC<ForgotPasswordCompProps> = ({
 }) => {
   const router = useRouter();
   return (
-    <ContainerWrapper>
+    <ContainerWrapper className='gap-3'>
       {/* Back button */}
       <Button
         type='button'

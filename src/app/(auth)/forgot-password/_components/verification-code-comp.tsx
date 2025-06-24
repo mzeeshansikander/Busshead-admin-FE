@@ -22,7 +22,7 @@ const VerificationCodeComp: React.FC<VerificationCodeCompProps> = ({
   globalEmail,
   otpCode,
 }) => {
-  const [remainingTime, setRemainingTime] = useState(30);
+  const [remainingTime, setRemainingTime] = useState(60);
   const [canResend, setCanResend] = useState(false);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const VerificationCodeComp: React.FC<VerificationCodeCompProps> = ({
   };
 
   return (
-    <ContainerWrapper>
+    <ContainerWrapper className='gap-3'>
       {/* Back button */}
       <Button
         type='button'

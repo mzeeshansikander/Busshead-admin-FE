@@ -23,7 +23,7 @@ const SetNewPasswordComp: React.FC<SetNewPasswordCompProps> = ({
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <ContainerWrapper>
+    <ContainerWrapper className='gap-3'>
       {/* Back button */}
       <Button
         type='button'

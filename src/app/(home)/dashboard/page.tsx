@@ -1,7 +1,8 @@
-import React from 'react';
+'use client';
+import DashboardView from './_views/dashboard.view';
 
 const DashboardPage = () => {
-  return <div>Dashboard Page</div>;
+  return <DashboardView />;
 };
 
 export default DashboardPage;

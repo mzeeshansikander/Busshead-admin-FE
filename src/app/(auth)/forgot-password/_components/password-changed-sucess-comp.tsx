@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 const PasswordChangedSucessComp = () => {
   const router = useRouter();
   return (
-    <ContainerWrapper>
+    <ContainerWrapper className='gap-3'>
       <Image
         src={successIcon}
         alt='success icon'

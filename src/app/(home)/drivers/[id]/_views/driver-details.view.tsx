@@ -67,7 +67,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
       <div className='grid sm:grid-cols-2 grid-cols-1 gap-3 w-full'>
         <div className='flex flex-col gap-5'>
           {/* image container */}
-          <ContainerWrapper>
+          <ContainerWrapper className='gap-3'>
             <div className='flex sm:flex-row flex-col gap-3 sm:gap-0 justify-between'>
               <div className='flex flex-row'>
                 <Image
@@ -92,7 +92,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
             </div>
 
             {/* Details Container */}
-            <ContainerWrapper>
+            <ContainerWrapper className='gap-3'>
               <div className='grid grid-cols-1 gap-y-4 '>
                 <div className='grid grid-cols-2 '>
                   <h3 className='font-medium border-b-2 pb-2'>First Name</h3>
@@ -131,7 +131,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           </ContainerWrapper>
 
           {/* Driving License Container */}
-          <ContainerWrapper>
+          <ContainerWrapper className='gap-3'>
             <h3 className='font-medium text-lg'>Driving License</h3>
             <div className='flex sm:flex-row sm:justify-center flex-col'>
               {/* front side */}
@@ -156,7 +156,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           </ContainerWrapper>
 
           {/* Account Restriction Container */}
-          <ContainerWrapper>
+          <ContainerWrapper className='gap-3'>
             <div className='flex flex-col gap-7'>
               <div className='flex flex-row gap-1'>
                 <Image
@@ -179,7 +179,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
         </div>
 
         {/* right container */}
-        <ContainerWrapper>
+        <ContainerWrapper className='gap-3'>
           <h2 className='text-lg font-medium'>Vehicle Details</h2>
           <Image
             src={truckPicture}
@@ -188,7 +188,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           />
 
           {/* Vehicle Details*/}
-          <ContainerWrapper>
+          <ContainerWrapper className='gap-3'>
             <div className='grid grid-cols-1 gap-y-4 '>
               <div className='grid grid-cols-2 '>
                 <h3 className='font-medium border-b-2 pb-2'>Vehicle Type</h3>
@@ -229,7 +229,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           <h3 className='font-medium text-lg'>Registration Certificate</h3>
 
           {/* Registration Certificate Pdf Container */}
-          <ContainerWrapper>
+          <ContainerWrapper className='gap-3'>
             <div className='flex flex-row gap-4'>
               <Image
                 src={pdfLogo}

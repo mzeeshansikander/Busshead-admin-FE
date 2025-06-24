@@ -37,7 +37,7 @@ const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
       </div>
 
       {/* Shop Owner Details Container */}
-      <ContainerWrapper>
+      <ContainerWrapper className='gap-3'>
         {/* image container */}
         <div className='flex flex-row mb-2'>
           <Image
@@ -51,7 +51,7 @@ const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
           </div>
         </div>
 
-        <ContainerWrapper>
+        <ContainerWrapper className='gap-3'>
           <div className='grid grid-cols-1 gap-y-4 '>
             <div className='grid grid-cols-2 '>
               <h3 className='font-medium border-b-2 pb-2'>First Name</h3>
@@ -87,7 +87,7 @@ const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
       </ContainerWrapper>
 
       {/* Account Restriction Container */}
-      <ContainerWrapper>
+      <ContainerWrapper className='gap-3'>
         <div className='flex flex-col gap-7'>
           <div className='flex flex-row gap-1'>
             <Image

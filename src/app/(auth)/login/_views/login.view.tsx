@@ -18,7 +18,7 @@ const LoginView = () => {
       <h1 className='font-semibold text-[48px] text-center'>Busshead</h1>
 
       {/*  Form Container */}
-      <ContainerWrapper>
+      <ContainerWrapper className='gap-3'>
         <h2 className='text-[36px] font-semibold'>Log in</h2>
 
         <form>

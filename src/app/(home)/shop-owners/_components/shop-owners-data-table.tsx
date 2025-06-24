@@ -1,22 +1,12 @@
 'use client';
 
-import { dummyDriversData } from '@/common/types/constants/driver';
+import { dummyShopOwnersData } from '@/common/types/constants/shop-owners';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
-import DropdownComp from '@/components/reusable/drop-down';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
-import React, { Dispatch, SetStateAction, useState } from 'react';
-import { DRIVER_CATEGORIES } from '@/common/types/constants/constant';
-import Button from '@/components/reusable/button';
-import { DriverCategory } from '@/common/types/driver/driver.types';
-import { dummyShopOwnersData } from '@/common/types/constants/shop-owners';
+import { useState } from 'react';
 import ShopOwnersTableBody from './shop-owners-table-body';
-
-// interface DriversDataTableProps {
-//   setCurrentStep: Dispatch<SetStateAction<string>>;
-//   setDriverId: Dispatch<SetStateAction<string>>;
-// }
 
 const ShopOwnersDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
