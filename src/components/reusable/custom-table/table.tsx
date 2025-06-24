@@ -34,9 +34,9 @@ const Table = ({
   return (
     <CardFrame className='!p-0 overflow-hidden border border-divider'>
       {/* Render header section if provided */}
-      <div className='border-b border-divider'>{header}</div>
+      <div className=' border-divider'>{header}</div>
 
-      <div className='py-4'>
+      <div>
         {isPending ? (
           <div className='flex justify-center items-center h-[35dvh]'>
             <div className='animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-primary' />
@@ -45,11 +45,6 @@ const Table = ({
           <div className='w-full lg:overflow-x-scroll xl:overflow-x-hidden max-h-[55dvh] overflow-y-auto'>
             <table className='w-full relative'>{children}</table>
           </div>
-          // <div className='w-full lg:overflow-x-scroll xl:overflow-x-hidden max-h-[55dvh] overflow-y-auto'>
-          //   <div>
-          //     <table className='w-full relative'>{children}</table>
-          //   </div>
-          // </div>
         )}
       </div>
 

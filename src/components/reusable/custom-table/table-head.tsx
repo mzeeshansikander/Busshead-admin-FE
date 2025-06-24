@@ -12,7 +12,7 @@ import React from 'react';
  */
 const TableHeader = ({ tableHeader }: ITableHead) => {
   return (
-    <thead className='!w-full border-t border-divider border-b sticky -top-1 bg-neutral-200 text-white  z-10'>
+    <thead className='!w-full border-divider border-b sticky -top-1 bg-[#F2F5F6] text-white  z-10'>
       <tr className='h-[46px] w-full'>
         {tableHeader &&
           tableHeader.map((item: string, index: number) => {

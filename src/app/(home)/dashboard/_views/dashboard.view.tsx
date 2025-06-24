@@ -2,6 +2,7 @@
 import { dashboardCards } from '@/common/types/constants/dashboard';
 import ContainerWrapper from '@/components/reusable/container-wrapper';
 import Image from 'next/image';
+import OrdersDataTable from '../_components/orders-table/order-data-table';
 
 const DashboardView = () => {
   return (
@@ -26,6 +27,13 @@ const DashboardView = () => {
           ),
         )}
       </div>
+
+      <div className='flex flex-row justify-between mt-2'>
+        <h2 className='text-2xl font-semibold'>New Orders</h2>
+        <p className='font-semibold text-green-secondary'>View all</p>
+      </div>
+
+      <OrdersDataTable />
     </main>
   );
 };
