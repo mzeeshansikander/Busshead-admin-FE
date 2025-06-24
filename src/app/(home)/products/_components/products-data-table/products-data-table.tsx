@@ -20,7 +20,6 @@ const ProductsDataTable = () => {
     'Category',
     'Price',
     'Stock',
-
     'Action',
   ];
 

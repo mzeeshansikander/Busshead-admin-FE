@@ -3,11 +3,11 @@
 // Components
 import { cn } from '@/lib/utils';
 
-import Image from 'next/image';
-import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
-import { Dispatch, SetStateAction } from 'react';
+import profilePic from '@/../public/assets/images/john_doe.png';
 import Button from '@/components/reusable/button';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { GoArrowRight } from 'react-icons/go';
 
 interface ShopOwner {
   id: string;
@@ -50,6 +50,11 @@ const ShopOwnersTableBody = ({
       {/* First column - Driver Name*/}
       <td className={cn('truncate pl-3')}>
         <div className='flex items-center gap-3'>
+          <Image
+            src={profilePic}
+            alt='profile picture'
+            className='w-[28px] h-[28px]'
+          />
           <p className='text-[14px] font-normal text-black'>{driver || ''}</p>
         </div>
       </td>
@@ -73,10 +78,7 @@ const ShopOwnersTableBody = ({
           type='button'
           onClick={handleUserClick}
         >
-          <Image
-            src={arrowLeftIcon}
-            alt='arrow left'
-          />
+          <GoArrowRight className='w-[20px] h-[20px] text-black' />
         </Button>
       </td>
     </tr>

@@ -49,6 +49,9 @@
   --color-grey-medium: var(--color-grey-medium);
   --color-green-primary: var(--color-green-primary);
   --color-green-secondary: var(--color-green-secondary);
+  --color-green-secondary-light: var(--color-green-secondary-light);
+  --color-blue-primary: var(--color-blue-primary);
+  --color-blue-secondary: var(----color-blue-secondary);
 }
 
 :root {
@@ -92,6 +95,9 @@
   --color-grey-medium: #808080;
   --color-green-primary: #21ab70;
   --color-green-secondary: #b7bf49;
+  --color-green-secondary-light: #c6ca86;
+  --color-blue-primary: #466177;
+  --color-blue-secondary: #82aaca;
 }
 
 .dark {
