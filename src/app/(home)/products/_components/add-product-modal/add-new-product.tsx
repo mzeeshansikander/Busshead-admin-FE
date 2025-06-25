@@ -118,7 +118,7 @@ const AddNewProductComp = ({ isOpen, setIsOpen }: ModalProps) => {
         {/* Overlay */}
         <div className='fixed inset-0 bg-black/50 z-50' />
 
-        <DialogContent className='fixed left-1/2 top-1/2 z-50 w-full max-w-xl -translate-x-1/2 custom-no-scrollbar -translate-y-1/2 bg-white rounded-lg shadow-lg sm:max-h-[100vh] max-h-[80vh] overflow-y-auto'>
+        <DialogContent className='fixed left-1/2 top-1/2 z-50 w-full max-w-xl -translate-x-1/2 custom-no-scrollbar -translate-y-1/2 bg-white rounded-lg shadow-lg sm:max-h-[90vh] max-h-[80vh] overflow-y-auto'>
           <DialogTitle className='sr-only'>Add New Product</DialogTitle>
 
           {/* Header */}
