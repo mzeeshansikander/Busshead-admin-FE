@@ -21,7 +21,7 @@ const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
   return (
     <main className='flex flex-col gap-5 p-5'>
       {/* heading row */}
-      <div className='flex flex-row justify-between'>
+      <div className='flex sm:flex-row flex-col gap-2 sm:gap-0 justify-between'>
         <div className='flex flex-row gap-4'>
           {/* Back button */}
           <Button

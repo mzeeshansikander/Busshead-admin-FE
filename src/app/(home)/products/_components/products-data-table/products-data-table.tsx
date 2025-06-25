@@ -7,6 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
 import ProductsDataTableBody from './prodducts-data-table-body';
+import Button from '@/components/reusable/button';
+import { GoPlus } from 'react-icons/go';
+import AddNewProductComp from '../add-product-modal/add-new-product';
 
 const ProductsDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,6 +17,7 @@ const ProductsDataTable = () => {
   const [searchProduct, setSearchProduct] = useState('');
   const [quantity, setQuantity] = useState('');
   const [category, setCategory] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
 
   const productsTableHeader = [
     'Products',
@@ -80,7 +84,25 @@ const ProductsDataTable = () => {
 
   return (
     <div className='flex flex-col p-4'>
-      <h1 className='text-[34px] font-semibold'>Drivers</h1>
+      {/* heading bar */}
+      <div className='flex flex-row justify-between'>
+        <h1 className='text-[34px] font-semibold'>Products</h1>
+        <Button
+          type='button'
+          className='gradient py-2 px-6 mt-2'
+          onClick={() => setIsOpen(true)}
+        >
+          <div className='flex flex-row gap-2'>
+            <GoPlus className='mt-1' />
+            <p className='font-semibold'>New Product</p>
+          </div>
+        </Button>
+      </div>
+
+      <AddNewProductComp
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
 
       <div className='mt-3'>
         <Table

@@ -1,9 +1,9 @@
 'use client';
 
 import truckPicture from '@/../public/assets/images/container-truck.png';
-import profilePicture from '@/../public/assets/images/Ellipse 5.png';
+// import profilePicture from '@/../public/assets/images/Ellipse 5.png';
 import licensePicture from '@/../public/assets/images/license_front.png';
-import chatIcon from '@/../public/assets/images/message-text.png';
+import profilePic from '@/../public/assets/images/Ellipse 5 john.png';
 import pdfLogo from '@/../public/assets/images/pdf_logo.png';
 import {
   dummyDriverDetails,
@@ -71,7 +71,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
             <div className='flex sm:flex-row flex-col gap-3 sm:gap-0 justify-between'>
               <div className='flex flex-row'>
                 <Image
-                  src={profilePicture}
+                  src={profilePic}
                   alt='profile picture'
                 />
                 <div className='flex flex-col'>
