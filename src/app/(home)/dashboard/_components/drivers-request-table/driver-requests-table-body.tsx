@@ -8,6 +8,7 @@ import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
 import { Dispatch, SetStateAction } from 'react';
 import Button from '@/components/reusable/button';
 import { useRouter } from 'next/navigation';
+import { GoArrowRight } from 'react-icons/go';
 
 interface DriverRequest {
   driverName: string;
@@ -56,12 +57,8 @@ const DriverRequestsDataTableBody = ({
         <Button
           className='text-gray-400 hover:text-gray-600'
           type='button'
-          //   onClick={handleUserClick}
         >
-          <Image
-            src={arrowLeftIcon}
-            alt='arrow left'
-          />
+          <GoArrowRight className=' ml-2 w-[20px] h-[20px] text-black' />
         </Button>
       </td>
     </tr>
