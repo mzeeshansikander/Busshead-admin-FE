@@ -1,8 +1,7 @@
-import React from 'react';
-import ShopOwnersDataTable from './_components/shop-owners-data-table';
+import ShopOwnersView from './_views/shop-owner.view';
 
 const ShopOwnersPage = () => {
-  return <ShopOwnersDataTable />;
+  return <ShopOwnersView />;
 };
 
 export default ShopOwnersPage;

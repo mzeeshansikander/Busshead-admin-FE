@@ -10,6 +10,7 @@ import ProductsDataTableBody from './prodducts-data-table-body';
 import Button from '@/components/reusable/button';
 import { GoPlus } from 'react-icons/go';
 import AddNewProductComp from '../add-product-modal/add-new-product';
+import DeleteProductComp from '../delete-product-modal/delete-product-modal';
 
 const ProductsDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,6 +19,7 @@ const ProductsDataTable = () => {
   const [quantity, setQuantity] = useState('');
   const [category, setCategory] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const productsTableHeader = [
     'Products',
@@ -82,6 +84,8 @@ const ProductsDataTable = () => {
     );
   };
 
+  console.log('delete state', deleteModalOpen);
+
   return (
     <div className='flex flex-col p-4'>
       {/* heading bar */}
@@ -105,6 +109,11 @@ const ProductsDataTable = () => {
       />
 
       <div className='mt-3'>
+        {/* Delete Product Modal */}
+        <DeleteProductComp
+          isOpen={deleteModalOpen}
+          setIsOpen={setDeleteModalOpen}
+        />
         <Table
           header={SearchHeader()}
           currentPage={currentPage}
@@ -123,14 +132,16 @@ const ProductsDataTable = () => {
           <tbody>
             {/* User rows */}
             {dummyProductsData.length > 0 &&
-              dummyProductsData.map((product, index) => (
+              dummyProductsData.map(product => (
                 <ProductsDataTableBody
+                  id={product?.id}
                   category={product?.category}
                   price={product?.price}
                   product={product?.product}
                   stock={product?.stock}
-                  key={index}
+                  key={product?.id}
                   image={product?.image}
+                  setIsOpen={setDeleteModalOpen}
                 />
               ))}
 

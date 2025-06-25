@@ -9,26 +9,29 @@ import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
 
 interface Product {
-  //   id: string;
+  id: number;
   product: string;
   category: string;
   price: number;
   stock: number;
   image?: StaticImageData;
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ProductsDataTableBody = ({
+  id,
   category,
   price,
   product,
   stock,
   image,
+  setIsOpen,
 }: Product) => {
   const router = useRouter();
 
-  //   const handleUserClick = () => {
-  //     router.push(`/drivers/${id}`);
-  //   };
+  const handleUserClick = () => {
+    router.push(`/products/${id}`);
+  };
 
   return (
     <tr
@@ -38,7 +41,9 @@ const ProductsDataTableBody = ({
         'text-[13px] font-medium text-[#51595A]',
         'hover:bg-[#f7f7f7]',
         'relative',
+        'cursor-pointer',
       )}
+      onClick={handleUserClick}
     >
       {/* First column - Product*/}
       <td className={cn('truncate pl-3')}>
@@ -79,7 +84,13 @@ const ProductsDataTableBody = ({
       {/* Fifth column - Actions  */}
       <td className={cn('truncate pl-3 flex justify-end pr-8 mt-2')}>
         <div className='flex justify-between gap-2.5'>
-          <Button type='button'>
+          <Button
+            type='button'
+            onClick={e => {
+              e.stopPropagation();
+              setIsOpen && setIsOpen(true);
+            }}
+          >
             <Image
               src={deleteIcon}
               alt='delete icon'

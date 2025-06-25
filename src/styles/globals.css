@@ -51,7 +51,12 @@
   --color-green-secondary: var(--color-green-secondary);
   --color-green-secondary-light: var(--color-green-secondary-light);
   --color-blue-primary: var(--color-blue-primary);
-  --color-blue-secondary: var(----color-blue-secondary);
+  --color-blue-secondary: var(--color-blue-secondary);
+  --color-active-blue-zero: var(--color-active-blue-zero);
+  --color-active-blue-sixty: var(--color-active-blue-sixty);
+  --color-active-green-light: var(--color-active-green-light);
+  --color-active-green-sixty: var(--color-active-green-sixty);
+  --color-neutral-grey-eighty: var(--color-neutral-grey-eighty);
 }
 
 :root {
@@ -98,6 +103,11 @@
   --color-green-secondary-light: #c6ca86;
   --color-blue-primary: #466177;
   --color-blue-secondary: #82aaca;
+  --color-active-blue-zero: #d2defb;
+  --color-active-blue-sixty: #1a49c3;
+  --color-active-green-light: #dcf1dd;
+  --color-active-green-sixty: #1c8f5d;
+  --color-neutral-grey-eighty: #51595a;
 }
 
 .dark {

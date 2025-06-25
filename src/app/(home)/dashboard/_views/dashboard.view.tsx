@@ -36,7 +36,7 @@ const DashboardView = () => {
       </div>
 
       {/* order table */}
-      <OrdersDataTable />
+      <OrdersDataTable isHidden={false} />
 
       <div className='grid sm:grid-cols-2 grid-cols-1 gap-3'>
         <PendingPaymentsDataTable />

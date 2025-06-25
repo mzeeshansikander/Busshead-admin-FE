@@ -87,6 +87,7 @@ const DriversTableBody = ({
       <td className={cn('truncate pl-3')}>
         <Button
           type='button'
+          disabled
           className={`border-2 py-1 px-3 rounded-xl ${statusClasses}`}
         >
           {status || 'N/A'}

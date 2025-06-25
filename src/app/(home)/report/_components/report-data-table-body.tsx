@@ -1,5 +1,6 @@
 'use client';
 
+import Button from '@/components/reusable/button';
 // Components
 import { cn } from '@/lib/utils';
 
@@ -22,6 +23,12 @@ const ReportDataTableBody = ({
   status,
   price,
 }: Report) => {
+  const statusClasses =
+    status === 'COD'
+      ? 'border-active-green-sixty text-active-green-sixty bg-active-green-light'
+      : status === 'Card'
+        ? 'border-active-blue-sixty text-active-blue-sixty bg-active-blue-zero'
+        : 'border-gray-300 text-gray-500 bg-gray-100';
   return (
     <tr
       className={cn(
@@ -45,7 +52,15 @@ const ReportDataTableBody = ({
       <td className={cn('truncate pl-3')}>{date || 'N/A'}</td>
 
       {/* Fifth column - Status */}
-      <td className={cn('truncate pl-3')}>{status || 'N/A'}</td>
+      <td className={`truncate pl-3 `}>
+        <Button
+          type='button'
+          disabled
+          className={`border-2 py-0.5 px-2 text-[16px] font-bold rounded-sm ${statusClasses}`}
+        >
+          {status || 'N/A'}
+        </Button>
+      </td>
 
       {/* Sixth column - Price  */}
       <td className={cn('truncate pl-3')}>${price || 'N/A'}</td>
