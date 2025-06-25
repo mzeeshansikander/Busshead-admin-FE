@@ -5,7 +5,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56232',
@@ -13,7 +13,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56233',
@@ -21,7 +21,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56234',
@@ -29,7 +29,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56235',
@@ -37,7 +37,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56236',
@@ -45,7 +45,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56237',
@@ -53,7 +53,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56238',
@@ -61,7 +61,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56239',
@@ -69,7 +69,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56240',
@@ -77,7 +77,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56241',
@@ -85,7 +85,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56242',
@@ -93,7 +93,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56243',
@@ -101,7 +101,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56244',
@@ -109,7 +109,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56245',
@@ -117,7 +117,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56246',
@@ -125,7 +125,7 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'COD',
-    price: '2345.3',
+    price: 2345.3,
   },
   {
     id: '56247',
@@ -133,6 +133,6 @@ export const dummyReportData = [
     driver: 'Albert',
     date: '26,04, 25',
     status: 'Card',
-    price: '2345.3',
+    price: 2345.3,
   },
 ];
