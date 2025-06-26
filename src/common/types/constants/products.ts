@@ -113,3 +113,39 @@ export const PRODUCT_IMAGES = [
   shirtPicThree,
   shirtPicFour,
 ];
+
+export const PRODUCTS_OBJECT = [
+  {
+    title: 'Navy Blue Wool Cap',
+    quantity: 60,
+    price: 13.99,
+    image: capIcon,
+  },
+  {
+    title: 'Blue Ink Straight Fit Belted',
+    quantity: 60,
+    price: 42.99,
+    image: sweaterIcon,
+  },
+  {
+    title: 'Grey Baseball Metal Cap',
+    quantity: 60,
+    price: 13.99,
+    image: jeansIcon,
+  },
+];
+
+export const ORDER_TOTALS = [
+  {
+    field: 'Sub Total',
+    amount: 2348.99,
+  },
+  {
+    field: 'Delivery Fee',
+    amount: 5.0,
+  },
+  {
+    field: 'Total Amount',
+    amount: 2348.99,
+  },
+];

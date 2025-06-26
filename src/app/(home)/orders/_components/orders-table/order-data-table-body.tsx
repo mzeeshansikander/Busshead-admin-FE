@@ -13,6 +13,7 @@ import { CgProfile } from 'react-icons/cg';
 import { GoArrowRight } from 'react-icons/go';
 
 interface Order {
+  id: number;
   orderId: string;
   shopOwner: string;
   shopOwnerImage: string;
@@ -23,6 +24,7 @@ interface Order {
 }
 
 const OrdersDataTableBody = ({
+  id,
   orderId,
   shopOwner,
   driver,
@@ -33,11 +35,10 @@ const OrdersDataTableBody = ({
 }: Order) => {
   const router = useRouter();
 
-  //   const handleUserClick = () => {
-  //     console.log('working');
-  //     router.push(`/shop-owners/${id}`);
-
-  //   };
+  const handleUserClick = () => {
+    console.log('working');
+    router.push(`/orders/${id}`);
+  };
 
   const statusClasses =
     payment === 'COD'
@@ -54,6 +55,7 @@ const OrdersDataTableBody = ({
         'hover:bg-[#f7f7f7]',
         'relative',
       )}
+      onClick={handleUserClick}
     >
       {/* First column - Order ID*/}
       <td className={cn('truncate pl-3')}>

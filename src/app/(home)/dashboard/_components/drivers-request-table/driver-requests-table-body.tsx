@@ -4,7 +4,7 @@
 import { cn } from '@/lib/utils';
 
 import Image from 'next/image';
-import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
+import profileImg from '@/../public/assets/images/Ellipse 5 john.png';
 import { Dispatch, SetStateAction } from 'react';
 import Button from '@/components/reusable/button';
 import { useRouter } from 'next/navigation';
@@ -43,7 +43,12 @@ const DriverRequestsDataTableBody = ({
       {/* First column - Driver Name*/}
       <td className={cn('truncate pl-3')}>
         <div className='flex items-center gap-3'>
-          <p className='text-[14px] font-normal text-black'>
+          <Image
+            src={profileImg}
+            alt='profile picture'
+            className='w-[28px] h-[28px]'
+          />
+          <p className='text-[14px] font-normal text-black underline underline-offset-4'>
             {driverName || ''}
           </p>
         </div>
@@ -54,12 +59,20 @@ const DriverRequestsDataTableBody = ({
 
       {/* Fourth column - Actions  */}
       <td className={cn('truncate pl-3')}>
-        <Button
-          className='text-gray-400 hover:text-gray-600'
-          type='button'
-        >
-          <GoArrowRight className=' ml-2 w-[20px] h-[20px] text-black' />
-        </Button>
+        <div className='flex flex-row gap-1.5'>
+          <Button
+            className='text-white bg-[#F14D4D] rounded-md border-[#F14D4D] px-3 py-1.5'
+            type='button'
+          >
+            Reject
+          </Button>
+          <Button
+            className='text-white bg-green-primary rounded-md border-green-primary px-2 py-1.5'
+            type='button'
+          >
+            Approve
+          </Button>
+        </div>
       </td>
     </tr>
   );

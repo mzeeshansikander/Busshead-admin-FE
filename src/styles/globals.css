@@ -57,6 +57,10 @@
   --color-active-green-light: var(--color-active-green-light);
   --color-active-green-sixty: var(--color-active-green-sixty);
   --color-neutral-grey-eighty: var(--color-neutral-grey-eighty);
+  --color-order-grey-color: var(--color-order-grey-color);
+  --color-neutral-grey-fifty: var(--color-neutral-grey-fifty);
+  --color-neutral-grey-seventy: var(--color-neutral-grey-seventy);
+  --color-neutral-grey-hundred: var(--color-neutral-grey-hundred);
 }
 
 :root {
@@ -108,6 +112,10 @@
   --color-active-green-light: #dcf1dd;
   --color-active-green-sixty: #1c8f5d;
   --color-neutral-grey-eighty: #51595a;
+  --color-order-grey-color: #667085;
+  --color-neutral-grey-fifty: #9ea9aa;
+  --color-neutral-grey-seventy: #626d6f;
+  --color-neutral-grey-hundred: #25292a;
 }
 
 .dark {

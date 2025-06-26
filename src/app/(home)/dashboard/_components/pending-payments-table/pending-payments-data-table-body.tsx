@@ -4,7 +4,7 @@
 import { cn } from '@/lib/utils';
 
 import Image from 'next/image';
-import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
+import profileImg from '@/../public/assets/images/Ellipse 5 john.png';
 import { Dispatch, SetStateAction } from 'react';
 import Button from '@/components/reusable/button';
 import { useRouter } from 'next/navigation';
@@ -43,6 +43,11 @@ const PendingPaymentsDataTableBody = ({
       {/* First column - Driver Name*/}
       <td className={cn('truncate pl-3')}>
         <div className='flex items-center gap-3'>
+          <Image
+            src={profileImg}
+            alt='profile picture'
+            className='w-[28px] h-[28px]'
+          />
           <p className='text-[14px] font-normal text-black'>
             {driverName || ''}
           </p>

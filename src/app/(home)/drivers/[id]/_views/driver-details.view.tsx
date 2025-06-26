@@ -69,7 +69,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           {/* image container */}
           <ContainerWrapper className='gap-3'>
             <div className='flex sm:flex-row flex-col gap-3 sm:gap-0 justify-between'>
-              <div className='flex flex-row'>
+              <div className='flex flex-row gap-1'>
                 <Image
                   src={profilePic}
                   alt='profile picture'
@@ -157,7 +157,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
 
           {/* Account Restriction Container */}
           <ContainerWrapper className='gap-3'>
-            <div className='flex flex-col gap-7'>
+            <div className='flex flex-col gap-6'>
               <div className='flex flex-row gap-1'>
                 <Image
                   src={restrictedIcon}
@@ -167,7 +167,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
               </div>
               <Button
                 type='button'
-                className=' bg-red-500 p-2 px-4'
+                className=' bg-red-500 p-2 px-4 ml-3'
                 onClick={() => setIsOpen(true)}
               >
                 <span className='text-white font-medium text-sm'>

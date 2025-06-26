@@ -109,6 +109,7 @@ const OrdersDataTable: React.FC<OrderDataTableProps> = ({ isHidden }) => {
             {dummyNewOrdersData?.length > 0 &&
               dummyNewOrdersData?.map((order, index) => (
                 <OrdersDataTableBody
+                  id={order?.id}
                   key={order?.orderId}
                   orderId={order?.orderId}
                   address={order?.address}

@@ -56,6 +56,7 @@ export const dashboardCards: DashboardCard[] = [
 
 export const dummyNewOrdersData = [
   {
+    id: 1,
     orderId: 'Order # 56231LK',
     shopOwner: 'John Doe',
     shopOwnerImage: '/images/shopOwner1.jpg',
@@ -66,6 +67,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 2,
     orderId: 'Order # 56232LK',
     shopOwner: 'Jane Smith',
     shopOwnerImage: '/images/shopOwner2.jpg',
@@ -76,6 +78,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 3,
     orderId: 'Order # 56233LK',
     shopOwner: 'Bob Marley',
     shopOwnerImage: '/images/shopOwner3.jpg',
@@ -86,6 +89,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 4,
     orderId: 'Order # 56234LK',
     shopOwner: 'Alice Johnson',
     shopOwnerImage: '/images/shopOwner4.jpg',
@@ -96,6 +100,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 5,
     orderId: 'Order # 56235LK',
     shopOwner: 'Charlie Puth',
     shopOwnerImage: '/images/shopOwner5.jpg',
@@ -106,6 +111,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 6,
     orderId: 'Order # 56236LK',
     shopOwner: 'Diana Prince',
     shopOwnerImage: '/images/shopOwner6.jpg',
@@ -116,6 +122,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 7,
     orderId: 'Order # 56237LK',
     shopOwner: 'Bruce Wayne',
     shopOwnerImage: '/images/shopOwner7.jpg',
@@ -126,6 +133,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 8,
     orderId: 'Order # 56238LK',
     shopOwner: 'Clark Kent',
     shopOwnerImage: '/images/shopOwner8.jpg',
@@ -136,6 +144,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 9,
     orderId: 'Order # 56239LK',
     shopOwner: 'Lois Lane',
     shopOwnerImage: '/images/shopOwner9.jpg',
@@ -146,6 +155,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 10,
     orderId: 'Order # 56240LK',
     shopOwner: 'Peter Parker',
     shopOwnerImage: '/images/shopOwner10.jpg',
@@ -156,6 +166,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 11,
     orderId: 'Order # 56241LK',
     shopOwner: 'Tony Stark',
     shopOwnerImage: '/images/shopOwner11.jpg',
@@ -166,6 +177,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 12,
     orderId: 'Order # 56242LK',
     shopOwner: 'Steve Rogers',
     shopOwnerImage: '/images/shopOwner12.jpg',
@@ -176,6 +188,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 13,
     orderId: 'Order # 56243LK',
     shopOwner: 'Natasha Romanoff',
     shopOwnerImage: '/images/shopOwner13.jpg',
@@ -186,6 +199,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 14,
     orderId: 'Order # 56244LK',
     shopOwner: 'Wanda Maximoff',
     shopOwnerImage: '/images/shopOwner14.jpg',
@@ -196,6 +210,7 @@ export const dummyNewOrdersData = [
     address: '20 Greenway Drive, San Diego, CA',
   },
   {
+    id: 15,
     orderId: 'Order # 56245LK',
     shopOwner: 'Vision',
     shopOwnerImage: '/images/shopOwner15.jpg',
