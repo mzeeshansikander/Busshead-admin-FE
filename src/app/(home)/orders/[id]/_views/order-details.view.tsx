@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 // import OrdersDataTable from '@/../dashboard/_components/orders-table/order-data-table';
 import Button from '@/components/reusable/button';
 import { GoArrowLeft } from 'react-icons/go';
@@ -14,9 +14,18 @@ import {
   PRODUCTS_OBJECT,
 } from '@/common/types/constants/products';
 import { useRouter } from 'next/navigation';
+import SelectDriverModalComp from '../../_components/select-driver-modal/select-driver-modal';
+import { dummyAssignedDrivers } from '@/common/types/constants/driver';
+import AssignedDriverPic from '@/../public/assets/images/john_doe.png';
 
 const OrderDetailsView = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const router = useRouter();
+
+  //using temporary for conditional rendering of buttons
+  const status = 'active' as 'pending' | 'active' | 'delivered';
+
   return (
     <main className='flex flex-col p-5 gap-5'>
       {/* heading bar */}
@@ -31,9 +40,37 @@ const OrderDetailsView = () => {
 
           <p className='text-[20px] font-bold'>Order # 56231LK</p>
         </div>
-        <p>Button</p>
+
+        {status === 'pending' ? (
+          <Button
+            type='button'
+            className='bg-active-blue-zero text-sm font-medium text-active-blue-seventy px-4 py-2 rounded-lg'
+          >
+            Pending
+          </Button>
+        ) : status === 'active' ? (
+          <Button
+            type='button'
+            className='bg-primary-green-zero text-sm font-medium text-active-green-sixty px-4 py-2 rounded-lg'
+          >
+            Active
+          </Button>
+        ) : status === 'delivered' ? (
+          <Button
+            type='button'
+            className='bg-neutral-grey-zero text-sm font-medium text-neutral-grey-eighty px-4 py-2 rounded-lg'
+          >
+            Delivered
+          </Button>
+        ) : (
+          <></>
+        )}
       </div>
 
+      <SelectDriverModalComp
+        isOpen={isModalOpen}
+        setIsOpen={setIsModalOpen}
+      />
       {/* order content part */}
       <div className='grid sm:grid-cols-2 grid-cols-1 gap-3 w-full'>
         {/* left side */}
@@ -112,20 +149,50 @@ const OrderDetailsView = () => {
           <ContainerWrapper className='gap-3'>
             <h3 className='text-lg font-medium'>Driver</h3>
 
-            <Image
-              src={truckRemoveImg}
-              alt='truck remove pic'
-              className='w-[55px] h-[55px] mx-auto mt-3'
-            />
-            <p className='text-neutral-grey-seventy text-center'>
-              No drives is assigned yet
-            </p>
+            {dummyAssignedDrivers.length === 0 ? (
+              <div>
+                <Image
+                  src={truckRemoveImg}
+                  alt='truck remove pic'
+                  className='w-[55px] h-[55px] mx-auto mt-3'
+                />
+                <p className='text-neutral-grey-seventy text-center'>
+                  No drives is assigned yet
+                </p>
 
-            <div className='flex justify-center max-w-full'>
-              <Button className='gradient text-black rounded-md px-4 py-2 w-full sm:w-48 md:w-56 lg:w-64 xl:w-80'>
-                Assign Driver
-              </Button>
-            </div>
+                <div className='flex justify-center max-w-full'>
+                  <Button
+                    className='gradient text-black rounded-md px-4 py-2 w-full sm:w-48 md:w-56 lg:w-64 xl:w-80'
+                    type='button'
+                    onClick={() => setIsModalOpen && setIsModalOpen(true)}
+                  >
+                    Assign Driver
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              dummyAssignedDrivers.map((driver, index) => (
+                <div
+                  className='flex flex-col gap-1'
+                  key={index}
+                >
+                  <div className='flex flex-row justify-between'>
+                    <div className='flex flex-row gap-1.5'>
+                      <Image
+                        src={AssignedDriverPic}
+                        alt='driver pic'
+                        className='w-[28px] h-[28px]'
+                      />
+                      <p className='text-neutral-grey-hundred'>
+                        {driver.driver}
+                      </p>
+                    </div>
+
+                    <Button type='button'>Pending</Button>
+                  </div>
+                </div>
+              ))
+            )}
           </ContainerWrapper>
 
           {/* PRODUCTS_ARRAY */}

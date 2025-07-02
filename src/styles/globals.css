@@ -44,7 +44,7 @@
   --color-neutral-grey-ten: var(--neutral-grey-ten);
   --color-neutral-grey-sixty: var(--neutral-grey-sixty);
   --color-green-sec: var(--color-green-sec);
-  --color-neutral-grey-zero: var(--color-neautral-grey-zero);
+  --color-neutral-grey-zero: var(--color-neutral-grey-zero);
   --color-dark-blue-primary: var(--color-dark-blue-primary);
   --color-grey-medium: var(--color-grey-medium);
   --color-green-primary: var(--color-green-primary);
@@ -61,6 +61,8 @@
   --color-neutral-grey-fifty: var(--color-neutral-grey-fifty);
   --color-neutral-grey-seventy: var(--color-neutral-grey-seventy);
   --color-neutral-grey-hundred: var(--color-neutral-grey-hundred);
+  --color-active-blue-seventy: var(--color-active-blue-seventy);
+  --color-primary-green-zero: var(--color-primary-green-zero);
 }
 
 :root {
@@ -116,6 +118,8 @@
   --color-neutral-grey-fifty: #9ea9aa;
   --color-neutral-grey-seventy: #626d6f;
   --color-neutral-grey-hundred: #25292a;
+  --color-active-blue-seventy: #153b9c;
+  --color-primary-green-zero: #d3eee2;
 }
 
 .dark {
