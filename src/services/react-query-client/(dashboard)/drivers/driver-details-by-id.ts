@@ -13,7 +13,7 @@ export const DriverDetailsHook = (driverId: string) => {
   };
 
   return useQuery({
-    queryKey: ['driver-details-by-id'],
+    queryKey: ['driver-details-by-id', driverId],
     queryFn: driverDetailsFn,
     retry: 0,
   });

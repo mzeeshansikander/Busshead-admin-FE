@@ -27,6 +27,7 @@ import toast from 'react-hot-toast';
 import { ApproveDriverHook } from '@/services/react-query-client/(dashboard)/drivers/approve-driver';
 import axios from 'axios';
 import { RejectDriverHook } from '@/services/react-query-client/(dashboard)/drivers/reject-driver';
+import { DriverApprovalTypes } from '@/common/types/driver/driver.types';
 
 interface DriverDetailsProps {
   driverId: string;
@@ -53,18 +54,19 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
   const { mutateAsync: rejectDriver, isPending: rejectDriverPending } =
     RejectDriverHook();
 
-  const handleUserClick = async (status: string) => {
+  //handling of user click on approve/reject
+  const handleUserClick = async (status: DriverApprovalTypes) => {
     try {
-      if (status === 'Approved') {
+      if (status === DriverApprovalTypes.APPROVED) {
         const response = await approveDriver({
           driver_id: Number(driverId),
         });
 
         toast.success('Driver Approved Successfully');
+      } else if (status === DriverApprovalTypes.REJECTED) {
+        const response = await rejectDriver({ driver_id: Number(driverId) });
+        toast.success('Driver Rejected Successfully');
       }
-
-      const response = await rejectDriver({ driver_id: Number(driverId) });
-      toast.success('Driver Rejected Successfully');
 
       router.push('/drivers');
     } catch (error) {
@@ -106,7 +108,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
               className='bg-red-500 py-2.5 px-8 text-white font-medium'
               type='button'
               disabled={approveDriverPending}
-              onClick={() => handleUserClick('Rejected')}
+              onClick={() => handleUserClick(DriverApprovalTypes.REJECTED)}
             >
               {rejectDriverPending ? (
                 <Loader className='w-5 h-5' />
@@ -119,7 +121,7 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
             <Button
               className='bg-green-primary py-2.5 px-6 text-white font-medium'
               type='button'
-              onClick={() => handleUserClick('Approved')}
+              onClick={() => handleUserClick(DriverApprovalTypes.APPROVED)}
               disabled={rejectDriverPending}
             >
               {approveDriverPending ? (
