@@ -15,3 +15,8 @@ export interface Driver {
   on_boarding_steps: number;
   is_onboarding_complete: boolean;
 }
+
+export enum DriverApprovalTypes {
+  APPROVED = 'Approved',
+  REJECTED = 'Rejected',
+}
