@@ -88,7 +88,9 @@ const ProductsDataTableBody = ({
             type='button'
             onClick={e => {
               e.stopPropagation();
-              setIsOpen && setIsOpen(true);
+              if (setIsOpen) {
+                setIsOpen(true);
+              }
             }}
           >
             <Image

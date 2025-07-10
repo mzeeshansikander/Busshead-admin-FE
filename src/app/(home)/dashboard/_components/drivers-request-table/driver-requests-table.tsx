@@ -10,7 +10,7 @@ const DriverRequestsDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const driversRequestsTableHeader = ['Driver', 'Vehcile', 'Action'];
+  const driversRequestsTableHeader = ['Driver', 'Vehicle', 'Action'];
 
   return (
     <div className='flex flex-col p-4 gap-2'>
@@ -38,7 +38,7 @@ const DriverRequestsDataTable = () => {
                   driverName={driverRequest?.driverName}
                   driverImage={driverRequest?.driverImage}
                   status={driverRequest?.status}
-                  vehcile={driverRequest?.vehicle}
+                  vehicle={driverRequest?.vehicle}
                   key={index}
                 />
               ))}

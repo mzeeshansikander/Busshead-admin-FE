@@ -1,33 +1,26 @@
 'use client';
 
-import truckPicture from '@/../public/assets/images/container-truck.png';
 // import profilePicture from '@/../public/assets/images/Ellipse 5.png';
-import licensePicture from '@/../public/assets/images/license_front.png';
-import profilePic from '@/../public/assets/images/Ellipse 5 john.png';
-import pdfLogo from '@/../public/assets/images/pdf_logo.png';
-import {
-  dummyDriverDetails,
-  dummyVehicleDetails,
-} from '@/common/types/constants/driver';
-import Button from '@/components/reusable/button';
-import ContainerWrapper from '@/components/reusable/container-wrapper';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { GoArrowLeft } from 'react-icons/go';
-import { useRouter } from 'next/navigation';
-import DeactivateDriverComp from '../../../components/features/(home)/drivers/[id]/deactivate-driver-comp';
-import ChatButtonComp from '@/components/reusable/chat-button';
 import restrictedIcon from '@/../public/assets/images/Avatar.png';
-import { DriverDetailsHook } from '@/services/react-query-client/(dashboard)/drivers/driver-details-by-id';
-import { VEHICLE_TYPE } from '@/common/types/vehicle/vehicle.type';
-import { useDriverStore } from '@/zustand/store';
-import Loader from '@/components/reusable/loader';
-import { MEDIA_TYPE } from '@/common/types/media/media-type.enum';
-import toast from 'react-hot-toast';
-import { ApproveDriverHook } from '@/services/react-query-client/(dashboard)/drivers/approve-driver';
-import axios from 'axios';
-import { RejectDriverHook } from '@/services/react-query-client/(dashboard)/drivers/reject-driver';
+import pdfLogo from '@/../public/assets/images/pdf_logo.png';
 import { DriverApprovalTypes } from '@/common/types/driver/driver.types';
+import { MEDIA_TYPE } from '@/common/types/media/media-type.enum';
+import { VEHICLE_TYPE } from '@/common/types/vehicle/vehicle.type';
+import Button from '@/components/reusable/button';
+import ChatButtonComp from '@/components/reusable/chat-button';
+import ContainerWrapper from '@/components/reusable/container-wrapper';
+import Loader from '@/components/reusable/loader';
+import { ApproveDriverHook } from '@/services/react-query-client/(dashboard)/drivers/approve-driver';
+import { DriverDetailsHook } from '@/services/react-query-client/(dashboard)/drivers/driver-details-by-id';
+import { RejectDriverHook } from '@/services/react-query-client/(dashboard)/drivers/reject-driver';
+import { useDriverStore } from '@/zustand/store';
+import axios from 'axios';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { GoArrowLeft } from 'react-icons/go';
+import DeactivateDriverComp from '../../../components/features/(home)/drivers/[id]/deactivate-driver-comp';
 
 interface DriverDetailsProps {
   driverId: string;
@@ -62,10 +55,11 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
           driver_id: Number(driverId),
         });
 
-        toast.success('Driver Approved Successfully');
+        if (response) toast.success('Driver Approved Successfully');
       } else if (status === DriverApprovalTypes.REJECTED) {
         const response = await rejectDriver({ driver_id: Number(driverId) });
-        toast.success('Driver Rejected Successfully');
+
+        if (response) toast.success('Driver Rejected Successfully');
       }
 
       router.push('/drivers');

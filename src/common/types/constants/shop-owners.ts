@@ -180,3 +180,31 @@ export const dummyShopOwnersData = [
     profilePicture: '/images/shopOwner20.jpg',
   },
 ];
+
+export const STORE_ADDRESSES = [
+  {
+    id: 50,
+    store_address: '123 Main Street, Dallas, TX',
+    store_name: 'Dallas Main Store A',
+  },
+  {
+    id: 52,
+    store_address: '123 Main Street, Dallas, TX',
+    store_name: 'Dallas Main Store B',
+  },
+  {
+    id: 53,
+    store_address: '123 Main Street, Dallas, TX',
+    store_name: 'Dallas Main Store C',
+  },
+  {
+    id: 54,
+    store_address: '28th street Austin, TX',
+    store_name: 'Austin 28th Street Store',
+  },
+  {
+    id: 59,
+    store_address: '20th street Florida',
+    store_name: 'Florida 20th Street Store',
+  },
+];

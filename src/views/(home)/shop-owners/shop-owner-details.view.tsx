@@ -1,13 +1,16 @@
 'use client';
+import restrictedIcon from '@/../public/assets/images/Avatar.png';
+import profilePicture from '@/../public/assets/images/john_doe.png';
 import Button from '@/components/reusable/button';
 import ChatButtonComp from '@/components/reusable/chat-button';
 import ContainerWrapper from '@/components/reusable/container-wrapper';
-import router, { useRouter } from 'next/navigation';
+import DropdownComp from '@/components/reusable/drop-down';
+import Loader from '@/components/reusable/loader';
+import GetShopOwnerByIdHook from '@/services/react-query-client/(dashboard)/shop-owners/shop-owner-by-id';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { GoArrowLeft } from 'react-icons/go';
-import Image from 'next/image';
-import profilePicture from '@/../public/assets/images/john_doe.png';
-import restrictedIcon from '@/../public/assets/images/Avatar.png';
 
 interface ShopOwnersDetailsProps {
   shopOwnerId: string;
@@ -16,8 +19,21 @@ interface ShopOwnersDetailsProps {
 const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
   shopOwnerId,
 }) => {
+  /* eslint-disable-next-line */
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+
+  //Hook to get shop owner details
+  const { data: shopOwnerDetailsData, isLoading: shopOwnerDetailsLoading } =
+    GetShopOwnerByIdHook(shopOwnerId);
+
+  if (shopOwnerDetailsLoading) {
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <Loader className='w-8 h-8' />
+      </div>
+    );
+  }
 
   return (
     <main className='flex flex-col gap-5 p-5'>
@@ -40,15 +56,18 @@ const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
       {/* Shop Owner Details Container */}
       <ContainerWrapper className='gap-3'>
         {/* image container */}
-        <div className='flex flex-row mb-2'>
+        <div className='flex flex-row gap-1 mb-2'>
           <Image
             src={profilePicture}
             alt='profile picture'
           />
           <div className='flex flex-col'>
-            <h2 className='text-2xl font-bold'>John Doe</h2>
-
-            <p className='text-base'>Jane@gmail.com</p>
+            <h2 className='text-2xl font-bold'>
+              {`${shopOwnerDetailsData?.data?.first_name}  ${shopOwnerDetailsData?.data?.last_name}`}
+            </h2>
+            <p className='text-base'>
+              {shopOwnerDetailsData?.data?.email ?? 'N/A'}
+            </p>
           </div>
         </div>
 
@@ -56,36 +75,54 @@ const ShopOwnerDetailsView: React.FC<ShopOwnersDetailsProps> = ({
           <div className='grid grid-cols-1 gap-y-4 '>
             <div className='grid grid-cols-2 '>
               <h3 className='font-medium border-b-2 pb-2'>First Name</h3>
-              <p className='border-b-2 pb-2'>Jane</p>
+              <p className='border-b-2 pb-2'>
+                {shopOwnerDetailsData?.data?.first_name ?? 'N/A'}
+              </p>
             </div>
 
             <div className='grid grid-cols-2'>
               <h3 className='font-medium border-b-2 pb-2'>Last Name</h3>
-              <p className='border-b-2 pb-2'>Cooper</p>
+              <p className='border-b-2 pb-2'>
+                {shopOwnerDetailsData?.data?.last_name ?? 'N/A'}
+              </p>
             </div>
 
             <div className='grid grid-cols-2'>
               <h3 className='font-medium border-b-2 pb-2'>Email</h3>
-              <p className='border-b-2 pb-2 break-words'>johndoe@example.com</p>
+              <p className='border-b-2 pb-2 break-words'>
+                {shopOwnerDetailsData?.data?.email ?? 'N/A'}
+              </p>
             </div>
 
             <div className='grid grid-cols-2'>
               <h3 className='font-medium border-b-2 pb-2'>Phone Number</h3>
-              <p className='border-b-2 pb-2'>+92 123 456 7890</p>
+              <p className='border-b-2 pb-2'>
+                {shopOwnerDetailsData?.data?.owner_meta_data?.phone_number ??
+                  'N/A'}
+              </p>
             </div>
 
             <div className='grid grid-cols-2'>
-              <h3 className='font-medium border-b-2 pb-2 '>Store Name</h3>
-              <p className='border-b-2 pb-2'>IndiMart</p>
-            </div>
-
-            <div className='grid grid-cols-2'>
-              <h3 className='font-medium '>Store Address</h3>
-              <p className=''>20 Greenway Drive, San Diego, CA</p>
+              <h3 className='font-medium'>Store Name</h3>
+              <p>
+                {shopOwnerDetailsData?.data?.owner_meta_data?.store_name ??
+                  'N/A'}
+              </p>
             </div>
           </div>
         </ContainerWrapper>
       </ContainerWrapper>
+
+      {/* Drop down for store addresses */}
+
+      <DropdownComp
+        label='Store Addresses'
+        classNameforLabel='!text-[17px] font-semibold'
+        valuesToMap={shopOwnerDetailsData?.data?.owner_store_locations.map(
+          item => item.store_address,
+        )}
+        iconShow={true}
+      />
 
       {/* Account Restriction Container */}
       <ContainerWrapper className='gap-3'>

@@ -3,11 +3,9 @@
 // Components
 import { cn } from '@/lib/utils';
 
-import Image from 'next/image';
 import profileImg from '@/../public/assets/images/Ellipse 5 john.png';
-import { Dispatch, SetStateAction } from 'react';
 import Button from '@/components/reusable/button';
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { GoArrowRight } from 'react-icons/go';
 
 interface PendingPayment {
@@ -20,11 +18,9 @@ interface PendingPayment {
 const PendingPaymentsDataTableBody = ({
   driverName,
   paymentId,
-  driverImage,
+  // driverImage,
   amount,
 }: PendingPayment) => {
-  const router = useRouter();
-
   //   const handleUserClick = () => {
   //     console.log('working');
   //     router.push(`/shop-owners/${id}`);

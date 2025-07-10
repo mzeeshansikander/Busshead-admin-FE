@@ -3,27 +3,25 @@
 // Components
 import { cn } from '@/lib/utils';
 
-import profilePic from '@/../public/assets/images/john_doe.png';
 import Button from '@/components/reusable/button';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { GoArrowRight } from 'react-icons/go';
 
 interface ShopOwner {
-  id: string;
-  driver: string;
+  id: number;
+  shopOwner: string;
   email: string;
   phoneNumber: string;
   storeName: string;
   storeAddress: string;
-  profilePicture?: string;
+  profilePicture: string;
   //   setCurrentStep?: Dispatch<SetStateAction<string>>;
   //   setDriverId?: Dispatch<SetStateAction<string>>;
 }
 
 const ShopOwnersTableBody = ({
   id,
-  driver,
+  shopOwner,
   email,
   phoneNumber,
   storeName,
@@ -50,12 +48,14 @@ const ShopOwnersTableBody = ({
       {/* First column - Driver Name*/}
       <td className={cn('truncate pl-3')}>
         <div className='flex items-center gap-3'>
-          <Image
-            src={profilePic}
+          <img
+            src={profilePicture}
             alt='profile picture'
             className='w-[28px] h-[28px]'
           />
-          <p className='text-[14px] font-normal text-black'>{driver || ''}</p>
+          <p className='text-[14px] font-normal text-black'>
+            {shopOwner || 'N/A'}
+          </p>
         </div>
       </td>
 

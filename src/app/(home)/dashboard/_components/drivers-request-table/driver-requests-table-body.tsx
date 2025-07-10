@@ -3,28 +3,23 @@
 // Components
 import { cn } from '@/lib/utils';
 
-import Image from 'next/image';
 import profileImg from '@/../public/assets/images/Ellipse 5 john.png';
-import { Dispatch, SetStateAction } from 'react';
 import Button from '@/components/reusable/button';
-import { useRouter } from 'next/navigation';
-import { GoArrowRight } from 'react-icons/go';
+import Image from 'next/image';
 
 interface DriverRequest {
   driverName: string;
   driverImage: string;
-  vehcile: string;
+  vehicle: string;
   status: string;
 }
 
 const DriverRequestsDataTableBody = ({
   driverName,
-  driverImage,
-  status,
-  vehcile,
+  // driverImage,
+  // status,
+  vehicle,
 }: DriverRequest) => {
-  const router = useRouter();
-
   //   const handleUserClick = () => {
   //     console.log('working');
   //     router.push(`/shop-owners/${id}`);
@@ -55,7 +50,7 @@ const DriverRequestsDataTableBody = ({
       </td>
 
       {/* Second column - Vehicle */}
-      <td className={cn('truncate pl-3')}>{vehcile || 'N/A'}</td>
+      <td className={cn('truncate pl-3')}>{vehicle || 'N/A'}</td>
 
       {/* Fourth column - Actions  */}
       <td className={cn('truncate pl-3')}>

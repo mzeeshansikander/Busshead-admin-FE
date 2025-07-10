@@ -1,3 +1,5 @@
+import { Driver } from './driver.types';
+
 export interface DriverVehicle {
   id: number;
   vehicle_type: number;
@@ -40,6 +42,8 @@ export interface DriverData {
   total_page: number;
 }
 
+//======================= all drivers response =============================
+
 export interface AllDriverDataResponse {
   data: DriverData;
   code: number;
@@ -60,6 +64,13 @@ export interface DriverDetails extends DriverType {
 
 export interface DriverDetailsResponse {
   data: DriverDetails;
+  code: number;
+  message: string;
+}
+
+//========================= approve reject driver response ======================
+export interface ApproveRejectDriverResponse {
+  data: Driver;
   code: number;
   message: string;
 }

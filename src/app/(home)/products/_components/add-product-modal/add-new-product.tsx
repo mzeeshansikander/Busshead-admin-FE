@@ -1,20 +1,14 @@
-import React, { useState } from 'react';
-import { X, Upload } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Dialog, DialogContent, DialogTitle } from '@radix-ui/react-dialog';
 import { Textarea } from '@/components/ui/textarea';
-import uploadIcon from '../../../../../../public/assets/images/add (2).png';
-import Image from 'next/image';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import DropdownComp from '@/components/reusable/drop-down';
+import { Dialog, DialogContent, DialogTitle } from '@radix-ui/react-dialog';
+import { X } from 'lucide-react';
+import React, { useState } from 'react';
+// import uploadIcon from '@/public/assets/images/add (2).png';
 import Button from '@/components/reusable/button';
+import DropdownComp from '@/components/reusable/drop-down';
+import Image from 'next/image';
+import uploadIcon from '../../../../../../public/assets/images/add (2).png';
 
 interface ModalProps {
   isOpen: boolean;

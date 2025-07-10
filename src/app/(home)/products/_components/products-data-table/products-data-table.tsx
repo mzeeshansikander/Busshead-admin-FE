@@ -2,7 +2,7 @@
 import { dummyProductsData } from '@/common/types/constants/products';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
-import DropdownComp from '@/components/reusable/drop-down';
+
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import Button from '@/components/reusable/button';
 import { GoPlus } from 'react-icons/go';
 import AddNewProductComp from '../add-product-modal/add-new-product';
 import DeleteProductComp from '../delete-product-modal/delete-product-modal';
+import DropdownComp from '@/components/reusable/drop-down';
 
 const ProductsDataTable = () => {
   const [currentPage, setCurrentPage] = useState(1);

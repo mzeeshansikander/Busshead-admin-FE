@@ -5,9 +5,7 @@ interface AuthLayoutProps {
   children: React.ReactNode;
 }
 
-export const AuthLayoutComponent: React.FC<AuthLayoutProps> = ({
-  children,
-}) => {
+const AuthLayoutComponent: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
     <main className='flex flex-row min-h-screen'>
       <div className='lg:flex justify-center items-center w-[60%] h-screen bg-primary text-secondary text-center hidden'>

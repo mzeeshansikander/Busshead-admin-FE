@@ -3,9 +3,6 @@
 import Button from '@/components/reusable/button';
 import ContainerWrapper from '@/components/reusable/container-wrapper';
 import PasswordField from '@/components/reusable/password-field';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Eye, EyeOff } from 'lucide-react';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { GoArrowLeft } from 'react-icons/go';
 
@@ -17,8 +14,8 @@ interface SetNewPasswordCompProps {
 
 const SetNewPasswordComp: React.FC<SetNewPasswordCompProps> = ({
   setCurrentStep,
-  globalCode,
-  globalEmail,
+  // globalCode,
+  // globalEmail,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -59,7 +56,7 @@ const SetNewPasswordComp: React.FC<SetNewPasswordCompProps> = ({
         <Button
           size='lg'
           variant='primary'
-          className='gradient mt-6'
+          className='gradient mt-6 hover-gradient-shimmer'
           type='button'
           onClick={() => setCurrentStep('passwordChangedSuccess')}
         >

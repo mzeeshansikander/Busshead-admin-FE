@@ -165,7 +165,7 @@
   }
 }
 
-.gradient,
+/* .gradient,
 .hover-gradient:hover {
   background: linear-gradient(
     90deg,
@@ -177,7 +177,7 @@
     #f3dc62 91.45%,
     #fffb8d 110.67%
   );
-}
+} */
 
 /* ========================|| Invisible Scrollbar Variant ||======================== */
 .custom-no-scrollbar::-webkit-scrollbar {
@@ -209,3 +209,123 @@ input {
   font-size: 13px;
   line-height: 50px !important;
 } */
+
+.gradient,
+.hover-gradient:hover {
+  background: linear-gradient(
+    90deg,
+    #eec340 -9.48%,
+    #f3d95d 6.14%,
+    #fdf383 18.33%,
+    #f6e66c 36.52%,
+    #e2b527 64.41%,
+    #f3dc62 91.45%,
+    #fffb8d 110.67%
+  );
+}
+
+/* Animated shine effect on hover */
+.hover-gradient {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+/* 
+.hover-gradient:hover {
+  background: linear-gradient(
+    90deg,
+    #eec340 -9.48%,
+    #f3d95d 6.14%,
+    #fdf383 18.33%,
+    #f6e66c 36.52%,
+    #e2b527 64.41%,
+    #f3dc62 91.45%,
+    #fffb8d 110.67%
+  );
+  background-size: 200% 100%;
+  animation: shine 2s ease-in-out infinite;
+} */
+
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Alternative shimmer effect using pseudo-element */
+.hover-gradient-shimmer {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #eec340 -9.48%,
+    #f3d95d 6.14%,
+    #fdf383 18.33%,
+    #f6e66c 36.52%,
+    #e2b527 64.41%,
+    #f3dc62 91.45%,
+    #fffb8d 110.67%
+  );
+  overflow: hidden;
+}
+
+.hover-gradient-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.hover-gradient-shimmer:hover::before {
+  left: 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Pulsing glow effect */
+.hover-gradient-glow:hover {
+  background: linear-gradient(
+    90deg,
+    #eec340 -9.48%,
+    #f3d95d 6.14%,
+    #fdf383 18.33%,
+    #f6e66c 36.52%,
+    #e2b527 64.41%,
+    #f3dc62 91.45%,
+    #fffb8d 110.67%
+  );
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    filter: brightness(1) saturate(1);
+    box-shadow: 0 0 5px rgba(238, 195, 64, 0.3);
+  }
+  100% {
+    filter: brightness(1.3) saturate(1.2);
+    box-shadow: 0 0 20px rgba(238, 195, 64, 0.6);
+  }
+}

@@ -1,4 +1,5 @@
 'use client';
+import johnImg from '@/../public/assets/images/Ellipse 5 john.png';
 import {
   dummyChatHeadsData,
   dummyMessagesData,
@@ -15,10 +16,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import React, { useState } from 'react';
+import { Menu, MoreHorizontal, Search, Send } from 'lucide-react';
 import Image from 'next/image';
-import johnImg from '@/../public/assets/images/Ellipse 5 john.png';
-import { Menu, X, Search, MoreHorizontal, Send } from 'lucide-react';
+import { useState } from 'react';
 
 const ChatView = () => {
   const [searchUser, setSearchUser] = useState('');
@@ -212,7 +212,7 @@ const ChatView = () => {
                       <div
                         className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl shadow-sm ${
                           message.sender === 'self'
-                            ? 'gradient text-black ml-auto'
+                            ? 'gradient text-black ml-auto hover-gradient-shimmer'
                             : 'bg-white text-gray-900 border border-gray-100'
                         }`}
                       >

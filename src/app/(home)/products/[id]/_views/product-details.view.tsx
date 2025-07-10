@@ -23,6 +23,8 @@ import { useRouter } from 'next/navigation';
 const ProductsDetailsView = () => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
+
+  /*eslint-disable-next-line*/
   const [count, setCount] = React.useState(0);
 
   useEffect(() => {

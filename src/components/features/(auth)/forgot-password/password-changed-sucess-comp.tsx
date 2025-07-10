@@ -24,7 +24,7 @@ const PasswordChangedSucessComp = () => {
       <Button
         size='lg'
         variant='primary'
-        className='gradient mt-6'
+        className='gradient mt-6 hover-gradient-shimmer'
         type='button'
         onClick={() => router.replace('login')}
       >

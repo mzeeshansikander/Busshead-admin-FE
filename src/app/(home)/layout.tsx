@@ -46,7 +46,7 @@ const NavigationContent: React.FC<{
               <SheetClose asChild>
                 <Link href={item.path}>
                   <div
-                    className={`flex gap-2 p-2 rounded cursor-pointer hover-gradient ${pathName === item?.name ? 'gradient' : ''}`}
+                    className={`flex gap-2 p-2 rounded cursor-pointer hover-gradient ${pathName === item?.name ? 'gradient hover-gradient-shimmer' : ''}`}
                     onMouseOver={() => setOver(item.label)}
                     onMouseOut={() => setOver('')}
                   >
@@ -67,7 +67,7 @@ const NavigationContent: React.FC<{
             ) : (
               <Link href={item.path}>
                 <div
-                  className={`flex gap-2 p-2 rounded cursor-pointer hover-gradient ${pathName === item?.name ? 'gradient' : ''}`}
+                  className={`flex gap-2 p-2 rounded cursor-pointer hover-gradient ${pathName === item?.name ? 'gradient hover-gradient-shimmer' : ''}`}
                   onMouseOver={() => setOver(item.label)}
                   onMouseOut={() => setOver('')}
                 >

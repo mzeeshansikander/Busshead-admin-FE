@@ -33,7 +33,7 @@ const PendingPaymentsDataTable = () => {
           <tbody>
             {/* User rows */}
             {dummyPendingPayments?.length > 0 &&
-              dummyPendingPayments?.map((pendingPayments, index) => (
+              dummyPendingPayments?.map(pendingPayments => (
                 <PendingPaymentsDataTableBody
                   amount={pendingPayments?.amount}
                   driverImage={pendingPayments?.driverImage}

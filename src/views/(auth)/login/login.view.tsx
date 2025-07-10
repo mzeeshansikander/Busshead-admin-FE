@@ -169,7 +169,7 @@ const LoginView = () => {
           <Button
             size='lg'
             variant='primary'
-            className='gradient mt-4'
+            className='gradient mt-4 hover-gradient-shimmer '
           >
             {isPending ? (
               <Loader className='w-5 h-5' />

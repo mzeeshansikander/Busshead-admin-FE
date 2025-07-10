@@ -13,7 +13,7 @@ interface ForgotPasswordCompProps {
 }
 
 const ForgotPasswordComp: React.FC<ForgotPasswordCompProps> = ({
-  setGlobalEmail,
+  // setGlobalEmail,
   setCurrentStep,
 }) => {
   const router = useRouter();
@@ -50,7 +50,7 @@ const ForgotPasswordComp: React.FC<ForgotPasswordCompProps> = ({
         <Button
           size='lg'
           variant='primary'
-          className='gradient mt-4'
+          className='gradient mt-4 hover-gradient-shimmer'
           onClick={() => setCurrentStep('verifyOtp')}
         >
           <span className='text-black text-[18px] font-semibold'>Continue</span>
