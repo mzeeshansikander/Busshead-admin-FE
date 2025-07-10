@@ -1,4 +1,4 @@
-import ShopOwnersView from './_views/shop-owner.view';
+import ShopOwnersView from '../../../views/(home)/shop-owners/shop-owner.view';
 
 const ShopOwnersPage = () => {
   return <ShopOwnersView />;

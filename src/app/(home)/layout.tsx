@@ -117,9 +117,9 @@ const Homelayout: React.FC<AuthLayoutProps> = ({ children }) => {
   };
 
   return (
-    <div className='flex flex-row min-h-screen'>
+    <div className='flex flex-row'>
       {/* Desktop Sidebar */}
-      <div className='w-[16%] border-r-2 hidden sm:flex flex-col min-h-screen mt-4'>
+      <div className='w-[16%] border-r-2 hidden sm:flex flex-col h-[98dvh] mt-4'>
         <NavigationContent
           over={over}
           setOver={setOver}
@@ -129,7 +129,7 @@ const Homelayout: React.FC<AuthLayoutProps> = ({ children }) => {
       </div>
 
       {/* Main Content */}
-      <div className='md:w-[84%] w-full min-h-screen'>
+      <div className='md:w-[84%] w-[100vw] h-[100dvh] overflow-y-auto'>
         {/* Mobile Header with Hamburger Menu */}
         <div className='sm:hidden flex items-center justify-between p-4 bg-white border-b'>
           <div className='flex items-center gap-4'>

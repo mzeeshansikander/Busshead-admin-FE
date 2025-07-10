@@ -1,8 +1,8 @@
 // React Imports
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
 // React Hot Toast Imports
-import { Toaster } from "react-hot-toast";
+import { Toaster } from 'react-hot-toast';
 
 export function ToasterProvider() {
   return (
@@ -11,14 +11,14 @@ export function ToasterProvider() {
         toastOptions={{
           success: {
             iconTheme: {
-              primary: "#F17121",
-              secondary: "white",
+              primary: '#E5BC31',
+              secondary: 'white',
             },
           },
           error: {
             iconTheme: {
-              primary: "#E32652",
-              secondary: "white",
+              primary: '#E32652',
+              secondary: 'white',
             },
           },
         }}
