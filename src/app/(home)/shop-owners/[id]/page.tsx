@@ -1,5 +1,5 @@
 import React from 'react';
-import ShopOwnerDetailsView from './_views/shop-owner-details.view';
+import ShopOwnerDetailsView from '../../../../views/(home)/shop-owners/shop-owner-details.view';
 
 const ShopOwnerDetailsPage = async ({
   searchParams,

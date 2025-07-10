@@ -1,5 +1,5 @@
 import React from 'react';
-import DriversView from './_views/driver.view';
+import DriversView from '@/views/(home)/drivers/driver.view';
 
 const DriversPage = () => {
   return <DriversView />;

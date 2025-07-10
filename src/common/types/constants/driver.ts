@@ -1,3 +1,5 @@
+import truckPicture from '@/../public/assets/images/container-truck.png';
+
 export const dummyDriversData = [
   {
     id: '1',
@@ -300,3 +302,5 @@ export const dummyAssignedDrivers = [
     profilePicture: '/images/driver10.jpg',
   },
 ];
+
+export const TRUCK_IMAGES = [truckPicture, truckPicture, truckPicture];

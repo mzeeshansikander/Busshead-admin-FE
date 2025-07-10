@@ -19,7 +19,7 @@ export const AuthLayoutComponent: React.FC<AuthLayoutProps> = ({
         />
       </div>
 
-      <div className='flex flex-col w-full lg:w-[40%] p-14 justify-center '>
+      <div className='flex flex-col w-full lg:w-[40%] sm:p-14 p-1 justify-center '>
         {children}
       </div>
     </main>

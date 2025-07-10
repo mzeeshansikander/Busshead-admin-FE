@@ -1,12 +1,8 @@
 import React from 'react';
-import DriverDetailsView from './_views/driver-details.view';
+import DriverDetailsView from '@/views/(home)/drivers/driver-details.view';
 
-const DriverDetailsPage = ({
-  searchParams,
-}: {
-  searchParams: { id: string };
-}) => {
-  return <DriverDetailsView driverId={searchParams?.id} />;
+const DriverDetailsPage = ({ params }: { params: { id: string } }) => {
+  return <DriverDetailsView driverId={params?.id} />;
 };
 
 export default DriverDetailsPage;
