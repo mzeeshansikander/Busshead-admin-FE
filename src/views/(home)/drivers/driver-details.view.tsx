@@ -61,10 +61,10 @@ const DriverDetailsView: React.FC<DriverDetailsProps> = ({ driverId }) => {
         });
 
         toast.success('Driver Approved Successfully');
+      } else if (status === 'Rejected') {
+        const response = await rejectDriver({ driver_id: Number(driverId) });
+        toast.success('Driver Rejected Successfully');
       }
-
-      const response = await rejectDriver({ driver_id: Number(driverId) });
-      toast.success('Driver Rejected Successfully');
 
       router.push('/drivers');
     } catch (error) {
