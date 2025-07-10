@@ -1,9 +1,9 @@
 'use client';
 
-import { dummyShopOwnersData } from '@/common/types/constants/shop-owners';
 import Table from '@/components/reusable/custom-table/table';
 import TableHeader from '@/components/reusable/custom-table/table-head';
 import { Input } from '@/components/ui/input';
+import { AllShopOwnersHook } from '@/services/react-query-client/(dashboard)/shop-owners/all-shop-owners';
 import { Search } from 'lucide-react';
 import { useState } from 'react';
 import ShopOwnersTableBody from './shop-owners-table-body';
@@ -14,13 +14,19 @@ const ShopOwnersDataTable = () => {
   const [searchShopOwner, setSearchShopOwner] = useState('');
 
   const shopOwnersTableHeader = [
-    'Driver',
+    'Shop Owner',
     'Email',
     'Phone Number',
     'Store Name',
     'Store Address',
     'Action',
   ];
+
+  const { data: AllShopOwnersData } = AllShopOwnersHook(
+    currentPage.toString(),
+    rowsPerPage.toString(),
+    searchShopOwner,
+  );
 
   const SearchHeader = () => {
     return (
@@ -49,6 +55,8 @@ const ShopOwnersDataTable = () => {
     );
   };
 
+  console.log({ AllShopOwnersData });
+
   return (
     <div className='flex flex-col p-4'>
       <h1 className='text-[34px] font-semibold'>Shop Owners</h1>
@@ -61,7 +69,7 @@ const ShopOwnersDataTable = () => {
           rowsPerPage={rowsPerPage}
           setCurrentPage={setCurrentPage}
           setRowsPerPage={setRowsPerPage}
-          total={20}
+          total={AllShopOwnersData?.data?.count}
           isFooter
           // isPending={isLoading}
         >
@@ -71,21 +79,24 @@ const ShopOwnersDataTable = () => {
           />
           <tbody>
             {/* User rows */}
-            {dummyShopOwnersData?.length > 0 &&
-              dummyShopOwnersData?.map((shopOwner, index) => (
+            {AllShopOwnersData &&
+              AllShopOwnersData?.data?.data?.length > 0 &&
+              AllShopOwnersData?.data?.data?.map(shopOwner => (
                 <ShopOwnersTableBody
                   id={shopOwner?.id}
                   email={shopOwner?.email}
-                  driver={shopOwner?.driver}
-                  phoneNumber={shopOwner?.phoneNumber}
-                  storeAddress={shopOwner?.phoneNumber}
-                  storeName={shopOwner?.storeName}
+                  shopOwner={shopOwner?.first_name + ' ' + shopOwner?.last_name}
+                  phoneNumber={shopOwner?.owner_meta_data?.phone_number}
+                  storeAddress={
+                    shopOwner?.owner_store_locations[0]?.store_address
+                  }
+                  storeName={shopOwner?.owner_meta_data?.store_name}
                   key={shopOwner?.id}
-                  profilePicture={shopOwner?.profilePicture}
+                  profilePicture={shopOwner?.owner_meta_data?.profile_image_url}
                 />
               ))}
 
-            {dummyShopOwnersData?.length === 0 ? (
+            {AllShopOwnersData?.data?.data?.length === 0 ? (
               <tr>
                 <td
                   colSpan={6}

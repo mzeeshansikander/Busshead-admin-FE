@@ -13,9 +13,7 @@ const DeactivateDriverComp = ({ isOpen, setIsOpen }: ModalProps) => {
     setIsOpen(false);
   };
 
-  if (!isOpen) null;
-
-  console.log('check is open', isOpen);
+  if (!isOpen) return null;
 
   return (
     <>

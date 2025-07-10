@@ -6,11 +6,10 @@ import TableHeader from '@/components/reusable/custom-table/table-head';
 import DropdownComp from '@/components/reusable/drop-down';
 import { Input } from '@/components/ui/input';
 import { AllDriversFiltersHook } from '@/services/react-query-client/(dashboard)/drivers/all-drivers-filter';
+import { useDriverStore } from '@/zustand/store';
 import { Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import DriversTableBody from './drivers-table-body';
-import { useDriverStore } from '@/zustand/store';
-import Loader from '@/components/reusable/loader';
 
 const DriversDataTable = () => {
   const [driverCategory, setDriverCategory] =
@@ -118,7 +117,7 @@ const DriversDataTable = () => {
           rowsPerPage={rowsPerPage}
           setCurrentPage={setCurrentPage}
           setRowsPerPage={setRowsPerPage}
-          total={20}
+          total={AllDriversData?.data?.count}
           isFooter
           // isPending={isLoading}
         >
@@ -130,15 +129,13 @@ const DriversDataTable = () => {
             {/* User rows */}
             {AllDriversData &&
               AllDriversData?.data?.data?.length > 0 &&
-              AllDriversData?.data?.data?.map((driver, index) => (
+              AllDriversData?.data?.data?.map(driver => (
                 <DriversTableBody
                   key={driver?.id}
                   id={driver?.id}
                   email={driver?.email}
                   name={driver?.first_name + ' ' + driver?.last_name}
                   phoneNumber={driver?.driver_meta_data?.phone_number}
-                  //   image={driver?.driver_meta_data?.profile_image_url}
-                  // status={driver?.status}
                   media={driver?.media}
                   status='Active'
                   vehicle={driver?.driver_vehicle.company}

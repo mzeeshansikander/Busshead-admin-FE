@@ -18,9 +18,9 @@ interface VerificationCodeCompProps {
 
 const VerificationCodeComp: React.FC<VerificationCodeCompProps> = ({
   setCurrentStep,
-  setGlobalCode,
-  globalEmail,
-  otpCode,
+  // setGlobalCode,
+  // globalEmail,
+  // otpCode,
 }) => {
   const [remainingTime, setRemainingTime] = useState(60);
   const [canResend, setCanResend] = useState(false);
@@ -95,7 +95,7 @@ const VerificationCodeComp: React.FC<VerificationCodeCompProps> = ({
           <Button
             size='lg'
             variant='primary'
-            className='gradient w-full'
+            className='gradient hover-gradient-shimmer w-full'
             onClick={() => setCurrentStep('setNewPassword')}
           >
             <span className='text-black text-[18px] font-semibold'>

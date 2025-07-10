@@ -11,7 +11,7 @@ const ChatButtonComp: React.FC<ChatButtonProps> = ({ onClick }) => {
   return (
     <Button
       type='button'
-      className='gradient py-2 px-6'
+      className='gradient py-2 px-6 hover-gradient-shimmer'
       onClick={onClick}
     >
       <div className='flex flex-row gap-2'>

@@ -4,8 +4,6 @@ import Button from '@/components/reusable/button';
 // Components
 import { cn } from '@/lib/utils';
 
-import { useRouter } from 'next/navigation';
-
 interface Report {
   id: string;
   user: string;

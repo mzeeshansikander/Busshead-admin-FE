@@ -1,8 +1,7 @@
-import React from 'react';
+import { DriverDetailsResponse } from '@/common/types/driver/driver-response';
 import { URL } from '@/services/api-base-urls';
 import { GET } from '@/services/axios-request-handler';
 import { useQuery } from '@tanstack/react-query';
-import { DriverDetailsResponse } from '@/common/types/driver/driver-response';
 
 export const DriverDetailsHook = (driverId: string) => {
   const driverDetailsFn = async (): Promise<DriverDetailsResponse> => {

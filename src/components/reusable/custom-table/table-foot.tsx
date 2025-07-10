@@ -24,6 +24,7 @@ const TableFoot = ({
   };
 
   useEffect(() => {
+    /*eslint-disable-next-line*/
     setCurrentPage && setCurrentPage(1);
   }, [rowsPerPage]);
 

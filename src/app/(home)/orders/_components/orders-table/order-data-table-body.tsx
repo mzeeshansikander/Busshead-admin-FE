@@ -3,12 +3,10 @@
 // Components
 import { cn } from '@/lib/utils';
 
-import Image from 'next/image';
-import arrowLeftIcon from '@/../public/assets/images/arrow-left.png';
-import { Dispatch, SetStateAction } from 'react';
-import Button from '@/components/reusable/button';
-import { useRouter } from 'next/navigation';
 import johnPic from '@/../public/assets/images/Ellipse 5.jpg';
+import Button from '@/components/reusable/button';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { CgProfile } from 'react-icons/cg';
 import { GoArrowRight } from 'react-icons/go';
 
@@ -31,7 +29,7 @@ const OrdersDataTableBody = ({
   deliveryDate,
   payment,
   address,
-  shopOwnerImage,
+  // shopOwnerImage,
 }: Order) => {
   const router = useRouter();
 
@@ -105,7 +103,7 @@ const OrdersDataTableBody = ({
         <div className='flex flex-row gap-3'>
           <Button
             type='button'
-            className='gradient py-1 px-4 text-black rounded-md font-medium'
+            className='gradient py-1 px-4 text-black rounded-md font-medium hover-gradient-shimmer'
             // onClick={onClick}
           >
             Assign

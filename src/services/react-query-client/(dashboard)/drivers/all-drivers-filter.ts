@@ -1,36 +1,3 @@
-// import { AllDriverDataResponse } from '@/common/types/driver/all-driver-filter-res';
-// import { URL } from '@/services/api-base-urls';
-// import { GET } from '@/services/axios-request-handler';
-// import { useQuery } from '@tanstack/react-query';
-// import { DriverCategory } from '@/common/types/driver/driver.types';
-
-// export const GetAllDriversFilters = (
-//   status: string,
-//   page?: string,
-//   limit?: string,
-//   name?: string,
-// ) => {
-//   const GetAllDriversFn = async (): Promise<AllDriverDataResponse> => {
-//     const driverUrl =
-//       status === 'Requested'
-//         ? URL.DRIVERS.GET_REQUESTED_DRIVERS(page, limit, name)
-//         : status === 'Approved'
-//           ? URL.DRIVERS.GET_APPROVED_DRIVERS(page, limit, name)
-//           : status === 'Rejected'
-//             ? URL.DRIVERS.GET_REJECTED_DRIVERS(page, limit, name)
-//             : '';
-
-//     const response = await GET(driverUrl);
-//     return response as AllDriverDataResponse;
-//   };
-
-//   return useQuery({
-//     queryKey: ['all-drivers', page, limit, name, status],
-//     queryFn: GetAllDriversFn,
-//     retry: 0,
-//   });
-// };
-
 import { AllDriverDataResponse } from '@/common/types/driver/driver-response';
 import { URL } from '@/services/api-base-urls';
 import { GET } from '@/services/axios-request-handler';

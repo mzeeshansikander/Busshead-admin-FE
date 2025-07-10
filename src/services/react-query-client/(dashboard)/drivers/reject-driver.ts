@@ -1,8 +1,7 @@
-import React from 'react';
+import { ApproveRejectDriverResponse } from '@/common/types/driver/driver-response';
 import { URL } from '@/services/api-base-urls';
 import { PATCH } from '@/services/axios-request-handler';
-import { ApproveRejectDriverResponse } from '@/common/types/driver/approve-driver-response';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 type RejectDriverPayload = {
   driver_id: number;

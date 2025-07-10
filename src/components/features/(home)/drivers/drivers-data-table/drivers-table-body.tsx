@@ -3,14 +3,10 @@
 // Components
 import { cn } from '@/lib/utils';
 
-import Image from 'next/image';
-import profilePic from '@/../public/assets/images/Ellipse 5 john.png';
-import { Dispatch, SetStateAction } from 'react';
+import { MEDIA_TYPE } from '@/common/types/media/media-type.enum';
 import Button from '@/components/reusable/button';
 import { useRouter } from 'next/navigation';
 import { GoArrowRight } from 'react-icons/go';
-import truckIcon from '@/../public/assets/images/vehicle_img.png';
-import { MEDIA_TYPE } from '@/common/types/media/media-type.enum';
 interface Driver {
   id: number;
   name: string;

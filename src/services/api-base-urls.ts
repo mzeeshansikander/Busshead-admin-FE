@@ -8,7 +8,7 @@ const IS_LIVE = true;
  */
 const PRODUCTION_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
-const S3URL = process.env.NEXT_PUBLIC_S3_URL as string;
+// const S3URL = process.env.NEXT_PUBLIC_S3_URL as string;
 
 /**
  * Local URL that will be treated as global start-point and is connected to local backend or AWS Elastic API.
@@ -56,5 +56,17 @@ export const URL = {
 
     APPROVE_DRIVER: `${BASE_URL}/approve-driver`,
     REJECT_DRIVER: `${BASE_URL}/reject-driver`,
+  },
+
+  SHOP_OWNERS: {
+    GET_ALL_SHOP_OWNERS: (page?: string, limit?: string, name?: string) => {
+      const params = new URLSearchParams();
+      if (page) params.append('page', page);
+      if (limit) params.append('limit', limit);
+      if (name) params.append('name', name);
+      return `${BASE_URL}/get-shop-owners/?${params.toString()}`;
+    },
+
+    GET_SHOP_OWNER_BY_ID: `${BASE_URL}/get-owner`,
   },
 } as const;

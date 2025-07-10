@@ -2,15 +2,12 @@ import React from 'react';
 import ShopOwnerDetailsView from '../../../../views/(home)/shop-owners/shop-owner-details.view';
 
 const ShopOwnerDetailsPage = async ({
-  searchParams,
+  params,
 }: {
-  searchParams: Promise<{ shopOwnerId: string }>;
+  params: Promise<{ id: string }>;
 }) => {
-  const resolvedSearchParams = await searchParams;
-
-  return (
-    <ShopOwnerDetailsView shopOwnerId={resolvedSearchParams?.shopOwnerId} />
-  );
+  const { id } = await params;
+  return <ShopOwnerDetailsView shopOwnerId={id} />;
 };
 
 export default ShopOwnerDetailsPage;
